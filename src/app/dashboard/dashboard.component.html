@@ -1,0 +1,20 @@
+<div *ngIf="role">
+
+  <div *ngIf="role.includes('admin')">
+    <app-admin-dashboard></app-admin-dashboard>
+  </div>
+
+  <div *ngIf="role.includes('manager')">
+    <app-manager-dashboard></app-manager-dashboard>
+  </div>
+
+  <div *ngIf="role.includes('Utilisa. du domaine')">
+    <app-collaborateur-dashboard></app-collaborateur-dashboard>
+  </div>
+
+  <div *ngIf="role.includes('directeur')">
+    <app-directeur-dashboard></app-directeur-dashboard>
+  </div>
+
+  <button (click)="logout()">Logout</button>
+</div>
