@@ -1,0 +1,213 @@
+<header class="header-area header-padding-1 sticky-bar header-res-padding clearfix">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-2 col-lg-2 col-md-6 col-4">
+                <div class="logo">
+                    <a href="#">
+                        <img alt="" src="assets/logo.png" class="logo-img">
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 d-none d-lg-block">
+                <div class="main-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home <i class="fa fa-angle-down"></i></a>
+                                <ul class="mega-menu mega-menu-padding">
+                                    <li>
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">À PROPOS DE NOUS</a></li>
+                                            <li><a [routerLink]="'/notre-entreprise'" routerLinkActive="active">Notre entreprise</a></li>
+                                            <li><a [routerLink]="'/notre-equipe'" routerLinkActive="active">Notre équipe</a></li>
+                                            <li><a href="#">Nos bureaux</a></li>
+                                            <li><a [routerLink]="'/responsable-sociale'" routerLinkActive="active">Responsabilité Sociale</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">Nos expertises</a></li>
+                                            <li><a href="#">Digitalisation & Innovation</a></li>
+                                            <li><a href="#">Réseaux & SI</a></li>
+                                            <li><a href="#">Développement durable</a></li>
+                                            <li><a href="#">Organisation & Métiers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">SAVOIR-FAIRE</a></li>
+                                            <li><a href="#">Connectivité et Réseaux Télécoms</a></li>
+                                            <li><a href="#">Défis environnementaux</a></li>
+                                            <li><a href="#">Transformation du marché Wholesale</a></li>
+                                            <li><a href="#">Data IA</a></li>
+                                            <li><a href="#">Agile</a></li>
+                                            <li><a href="#">Innovation Digitale</a></li>
+                                            <li><a href="#">Gouvernement Numérique</a></li>
+                                            <li><a href="#">Services Financiers Mobiles</a></li>
+                                            <li><a href="#">Efficacité Opérationnelle</a></li>
+                                            <li><a href="#">Stratégie Cloud</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#"> Shop <i class="fa fa-angle-down"></i> </a>
+                                <ul class="mega-menu">
+                                    <li>
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">NEWS & INSIGHTS</a></li>
+                                            <li><a href="#">Carrières</a></li>
+                                            <li><a href="#">Travailler chez Sofrecom</a></li>
+                                            <li><a href="#">Nous rejoindre</a></li>
+                                            <li><a href="#">Nos offres d'emploi</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">SECTEURS D'ACTIVITES </a></li>
+                                            <li><a href="#">Opérateur Télécoms</a></li>
+                                            <li><a href="#">Gouvernements et institutions publiques</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="mega-menu-img"><a href="#"><img src="assets/img/banner/banner-12.webp" alt=""></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Collection</a></li>
+                            <li><a href="#"> Pages <i class="fa fa-angle-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="#">about us</a></li>
+                                    <li><a href="#">cart page</a></li>
+                                    <li><a href="#">checkout </a></li>
+                                    <li><a href="#">wishlist </a></li>
+                                    <li><a href="#">my account</a></li>
+                                    <li><a href="#">login / register </a></li>
+                                    <li><a href="#">contact us </a></li>
+                                    <li><a href="#">404 page </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Blog <i class="fa fa-angle-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="#">blog standard</a></li>
+                                    <li><a href="#">blog no sidebar</a></li>
+                                    <li><a href="#">blog right sidebar</a></li>
+                                    <li><a href="#">blog details 1</a></li>
+                                    <li><a href="#">blog details 2</a></li>
+                                    <li><a href="#">blog details 3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"> Signal </a></li>
+                            <li><a href="#"> Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-6 col-8">
+                   <div class="header-right-wrap">
+                    <div class="same-style header-search">
+                        <a class="search-active" href="#"><i class="pe-7s-search"></i></a>
+                        <div class="search-content">
+                            <form action="#">
+                                <input type="text" placeholder="Search" />
+                                <button class="button-search"><i class="pe-7s-search"></i></button>
+                            </form>
+                        </div> 
+                    </div>
+                    <div class="same-style account-satting">
+                        <a class="account-satting-active" href="#"><i class="pe-7s-user-female"></i></a>
+                        <div class="account-dropdown">
+                            <ul>
+                                <li><a href="#">Applications</a></li>
+                                <li><a  [routerLink]="'/profile'" routerLinkActive="active">my account</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-area">
+            <div class="mobile-menu">
+                <nav id="mobile-menu-active">
+                    <ul class="menu-overflow">
+                        <li><a href="#">HOME</a>
+                            <ul>
+                                <li><a href="#">Demo Group 01</a>
+                                    <ul>
+                                        <li><a href="#">Home 1 – Fashion</a></li>
+                                        <li><a href="#">Home 2 – Fashion</a></li>
+                                        <li><a href="#">Home 3 – Fashion</a></li>
+                                        <li><a href="#">Home 4 – Fashion</a></li>
+                                        <li><a href="#">Home 5 – Fashion</a></li>
+                                        <li><a href="#">Home 6 – Fashion</a></li>
+                                        <li><a href="#">Home 7 – Fashion</a></li>
+                                        <li><a href="#">Home 8 – Minimal</a></li>
+                                        <li><a href="#">Home 9 – Electronics</a></li>
+                                        <li><a href="#">Home 10 – Furniture</a></li>
+                                        <li><a href="#">Home 11 - showcase slider</a></li>
+                                    </ul>
+                                </li>
+                               
+                               
+                            </ul>
+                        </li>
+                        <li><a href="#">Shop</a>
+                            <ul>
+                                <li><a href="#">shop layout</a>
+                                    <ul>
+                                        <li><a href="#">standard style</a></li>
+                                        <li><a href="#">Grid filter style</a></li>
+                                        <li><a href="#">Grid 2 column</a></li>
+                                        <li><a href="#">Grid No sidebar</a></li>
+                                        <li><a href="#">Grid full wide </a></li>
+                                        <li><a href="#">Grid right sidebar</a></li>
+                                        <li><a href="#">list 1 column box </a></li>
+                                        <li><a href="#">list 1 column full wide </a></li>
+                                        <li><a href="#">list 2 column  full wide</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">product details</a>
+                                    <ul>
+                                        <li><a href="#">tab style 1</a></li>
+                                        <li><a href="#">tab style 2</a></li>
+                                        <li><a href="#">tab style 3</a></li>
+                                        <li><a href="#">sticky style</a></li>
+                                        <li><a href="#">gallery style </a></li>
+                                        <li><a href="#">Slider style</a></li>
+                                        <li><a href="#">affiliate style</a></li>
+                                        <li><a href="#">fixed image style </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Collection</a></li>
+                        <li><a href="#">Pages</a>
+                            <ul>
+                                <li><a href="#">about us</a></li>
+                                <li><a href="#">cart page</a></li>
+                                <li><a href="#">checkout </a></li>
+                                <li><a href="#">wishlist </a></li>
+                                <li><a href="#">my account</a></li>
+                                <li><a href="#">login / register </a></li>
+                                <li><a href="#">contact us </a></li>
+                                <li><a href="#">404 page </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Blog</a>
+                            <ul>
+                                <li><a href="#">blog standard</a></li>
+                                <li><a href="#">blog no sidebar</a></li>
+                                <li><a href="#">blog right sidebar</a></li>
+                                <li><a href="#">blog details 1</a></li>
+                                <li><a href="#l">blog details 2</a></li>
+                                <li><a href="#">blog details 3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>

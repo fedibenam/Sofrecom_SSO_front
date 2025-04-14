@@ -1,0 +1,80 @@
+/* filepath: c:\Users\fbenhamouda\Sofrecom_SSO_front\src\app\components\about-us\about-us.component.scss */
+.about-us-area {
+    padding: 60px 0;
+    background-color: #f7f7f7;
+  
+    .about-us-content {
+      text-align: left;
+  
+      .section-title {
+        font-size: 24px;
+        color: #a749ff;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+  
+      .about-title {
+        font-size: 36px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+  
+      .about-description {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+  
+      .btn-learn-more {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #a749ff;
+        border-radius: 5px;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.3s ease;
+  
+        &:hover {
+          background-color: #7a2fcc;
+          transform: scale(1.05);
+        }
+      }
+    }
+  
+    .about-us-img {
+      position: relative;
+      overflow: hidden;
+  
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+  
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+      }
+  
+      /* Add a subtle animation effect */
+      .animated-image {
+        animation: float 3s ease-in-out infinite;
+      }
+  
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    }
+  }

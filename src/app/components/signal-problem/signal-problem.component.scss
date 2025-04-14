@@ -1,0 +1,195 @@
+/* Page Title Styling */
+.page-title {
+    font-size: 2.5rem; /* Larger font size */
+    font-weight: 700; /* Bold font */
+    color: #333; /* Dark text color */
+    margin-left: 20%; /* Space from the left */
+    text-transform: uppercase; /* Uppercase for a clean look */
+    letter-spacing: 1px; /* Space between letters */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  /* Sidebar and Navbar Adjustments */
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 20px; /* Reduce the space between navbar and content */
+  }
+  
+  /* Top Navbar Styling */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #e0e0e0; /* Add a bottom border for separation */
+  }
+  
+  /* Adjust the main content so it doesn't overlap with the navbar */
+  main {
+    margin-top: 80px; /* Increased margin for more breathing space */
+    padding: 0 20px; /* Padding for better content alignment */
+  }
+  
+  /* Sidebar Styling */
+  .sidebar {
+    position: fixed;
+    top: 80px; /* Offset for navbar */
+    left: 0;
+    height: calc(100% - 80px); /* Adjust height of sidebar */
+    width: 250px; /* Slightly wider for better alignment */
+    background-color: #343a40;
+    padding-top: 20px;
+    z-index: 100;
+    margin-top: 0; /* No extra space at the top */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow to sidebar */
+    border-right: 2px solid #e0e0e0; /* Add a right border for separation */
+    transition: transform 0.3s ease, width 0.3s ease; /* Smooth transition for hover or toggle */
+  }
+  
+  .sidebar-header img {
+    max-width: 60%; /* Logo size */
+    max-height: 50px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  
+  /* Sidebar Links */
+  .nav-link {
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Spacing between items */
+  }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+  }
+  
+  .nav-item .nav-link i {
+    margin-right: 10px; /* Space for icons */
+  }
+  
+  /* Active Link Styling */
+  .nav-item.active .nav-link {
+    background-color: #0056b3; /* Highlight active link */
+  }
+  
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 220px; /* Adjust width for smaller screens */
+    }
+  
+    .sidebar-header img {
+      max-width: 80%; /* Adjust logo size for mobile */
+    }
+  
+    .nav-link {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+      padding: 10px 15px;
+    }
+  
+    .sidebar {
+      transform: translateX(-250px); /* Hide sidebar off-screen by default */
+    }
+  
+    .sidebar.active {
+      transform: translateX(0); /* Slide sidebar into view */
+    }
+  }
+  .nav-link {
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Spacing between items */
+  }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    
+  }
+  
+  
+  
+  .nav-item .nav-link i {
+    margin-right: 10px; /* Space for icons */
+  }
+  
+  /* Active Link Styling */
+  .nav-item.active .nav-link {
+    background-color: #0056b3; /* Highlight active link */
+  }
+  
+  .navbar-brand img {
+    max-height: 45px;
+  }
+  
+  .navbar .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333 !important;
+    margin-right: 15px;
+  }
+  
+  .navbar .nav-item img {
+    transition: transform 0.2s ease;
+  }
+  
+  .navbar .nav-item img:hover {
+    transform: scale(1.05);
+  }
+  
+  .navbar .nav-link {
+    font-size: 1.05rem;
+    padding: 8px 15px;
+    color: #4a4a4a !important;        /* Modern dark gray */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar .nav-link:hover {
+    background-color: #e9ecef;       /* Light gray-blue */
+    color: #1d1d1d !important;       /* Slightly darker on hover */
+  }
+  
+  .navbar .nav-link.active {
+    background-color: #adb5bd;       /* Cool gray active background */
+    color: #0f0e0e !important;       /* White text for contrast */
+  }
+  
+  li.nav-item {
+    margin-left: 25px;
+  }
+
+  
+  textarea:focus,
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  border-color: #86b7fe;
+  outline: none;
+}
+
+form label {
+  font-size: 1rem;
+}
+
+form .form-control,
+form .form-select {
+  font-size: 0.95rem;
+}

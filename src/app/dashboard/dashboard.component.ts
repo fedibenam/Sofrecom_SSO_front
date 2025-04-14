@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
       if (this.role?.includes('manager')) {
         console.log('Manager dashboard should be displayed');
       }
-      if (this.role?.includes('Utilisa. du domaine')) {
+      if (this.role?.includes('Collaborateur')) {
         console.log('Collaborateur dashboard should be displayed');
       }
       if (this.role?.includes('directeur')) {

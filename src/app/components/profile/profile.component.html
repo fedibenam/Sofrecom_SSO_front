@@ -1,68 +1,34 @@
-<div class="container-fluid">
-  <div class="row">
-    <!-- Sidebar -->
-    <nav class="col-md-3 col-lg-2 d-md-block bg-dark text-white sidebar">
-      <div class="sidebar-header py-4 text-center">
-        <!-- Sidebar header content can go here, like a logo -->
-      </div>
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link text-white" [routerLink]="'/dashboard'">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" [routerLink]="'/profile'">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" (click)="logout()">Log Out</a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="col-md-9 ms-sm-auto col-lg-10">
-      <!-- Top Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-        <div class="container-fluid">
-          <a class="navbar-brand">
-            <img src="/assets/logo.png" alt="Sofrecom Logo" class="img-fluid" style="max-width: 150px;">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link text-dark" [routerLink]="'/dashboard'">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" [routerLink]="'/profile'">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Log Out</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-  <!-- Page Title -->
-<div class="d-flex justify-content-between align-items-center py-4">
-  <h1 class="h2 page-title">Collaborateur Profile</h1>
-</div>
+<app-header></app-header>
 
 
 <!-- Profile Content -->
-<div class="profile-container">
+<div class="container mt-4">
   <div class="profile-header text-center">
-    <img class="profile-image" src="/assets/Blank Profile Picture.jpg" alt="User Profile Picture" />
-    <h2 class="profile-name">{{ userInfo?.fullName }}</h2>
-    <p class="profile-username">{{ userInfo?.username }}</p>
+    <img
+      class="profile-image"
+      src="/assets/Blank Profile Picture.jpg"
+      alt="User Profile Picture"
+    />
+    <h2 class="profile-name">{{ userInfo?.nomEmp }}</h2>
+    <p class="profile-username">{{ userInfo?.mail }}</p>
+    <p class="profile-role">{{ userInfo?.fonction }}</p>
   </div>
 
-  <div class="profile-details">
-    <h3 class="profile-details-title">Groups:</h3>
-    <ul>
-      <li *ngFor="let group of userInfo?.groups" class="profile-group-item">{{ group }}</li>
+  <div class="profile-details mt-4">
+    <h3 class="profile-details-title">Details:</h3>
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Employee ID:</strong> {{ userInfo?.matEmp }}</li>
+      <li class="list-group-item"><strong>Position:</strong> {{ userInfo?.position }}</li>
+      <li class="list-group-item"><strong>Department:</strong> {{ userInfo?.nomDept }}</li>
+      <li class="list-group-item"><strong>Manager:</strong> {{ userInfo?.nomResp }}</li>
+      <li class="list-group-item"><strong>Business Unit:</strong> {{ userInfo?.nameBu }}</li>
+      <li class="list-group-item"><strong>Region:</strong> {{ userInfo?.region }}</li>
+      <li class="list-group-item"><strong>Country:</strong> {{ userInfo?.pays }}</li>
+      <li class="list-group-item"><strong>Seniority:</strong> {{ userInfo?.seniorite }}</li>
+      <li class="list-group-item"><strong>Total Leave Days:</strong> {{ userInfo?.totConge }}</li>
+      <li class="list-group-item"><strong>Sick Leave Days:</strong> {{ userInfo?.congeMaladie }}</li>
     </ul>
   </div>
 </div>
+
+<app-footer></app-footer>

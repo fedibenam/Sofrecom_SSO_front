@@ -1,19 +1,38 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';  // ✅ Import Router
 import { AuthService } from '../../_services/auth.service';
+import { OnInit } from '@angular/core';
+import { jwtDecode } from "jwt-decode"; // Correct import for default export
+
 @Component({
   selector: 'app-collaborateur-dashboard',
   templateUrl: './collaborateur-dashboard.component.html',
   styleUrl: './collaborateur-dashboard.component.scss'
 })
-export class CollaborateurDashboardComponent {
+export class CollaborateurDashboardComponent implements OnInit {
+  userInfo: { username: string; fullName: string; groups: string[] } | null = null;
+
   constructor(private authService: AuthService, private router: Router) {}
+
+  ngOnInit(): void {
+    const token = this.authService.getToken();
+    if (token) {
+      const decodedToken: any = jwtDecode(token);
+      this.userInfo = {
+        username: decodedToken?.sub || 'N/A',
+        fullName: decodedToken?.name || 'N/A',
+        groups: decodedToken?.role || []
+      };
+    }
+  }
 
   logout(): void {
     this.authService.logout();
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
 
   }
+
+  
 
   applications = [
     {

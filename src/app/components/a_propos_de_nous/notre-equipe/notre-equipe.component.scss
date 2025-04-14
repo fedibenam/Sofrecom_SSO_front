@@ -1,0 +1,95 @@
+.board-section {
+    background-color: #f8f9fa;
+  
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 0.5rem;
+    }
+  
+    .section-subtitle {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .editor-content {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      padding: 1.5rem;
+  
+      @media (min-width: 768px) {
+        padding: 2rem;
+      }
+  
+      p {
+        font-size: 1rem;
+        color: #444;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+  
+      strong {
+        color: #222;
+        font-weight: 600;
+      }
+    }
+  }
+  .bi {
+    vertical-align: middle;
+    font-size: 1.2rem;
+  }
+  
+
+  .team-section .section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+  
+  .team-card img {
+    object-fit: cover;
+    border: 4px solid #eaeaea;
+  }
+  .team-section {
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #222;
+    }
+  
+    .team-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      }
+  
+      img {
+        object-fit: cover;
+      }
+  
+      p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        min-height: 60px; // equalize card height
+      }
+    }
+  }
+  

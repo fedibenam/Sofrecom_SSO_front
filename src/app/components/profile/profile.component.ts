@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../_services/auth.service';
-import { jwtDecode } from "jwt-decode"; // Correct import for default export
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,13 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  userInfo: { username: string; fullName: string; groups: string[] } | null = null;
+  userInfo: any = null;
 
-  constructor(private authService: AuthService, private router: Router) {}
-  logout(): void {
-    this.authService.logout();
-    this.router.navigate(['/']);
-  }
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loadUserInfo();
@@ -24,16 +24,37 @@ export class ProfileComponent implements OnInit {
   loadUserInfo(): void {
     const token = this.authService.getToken();
     if (token) {
-      const decodedToken: any = jwtDecode(token);
-      console.log('Decoded Token:', decodedToken); // Debugging: Log the decoded token
-      this.userInfo = {
-        username: decodedToken?.sub || 'N/A', // Map 'sub' to 'username'
-        fullName: decodedToken?.name || 'N/A', // Map 'name' to 'fullName'
-        groups: decodedToken?.role || [] // Map 'role' to 'groups'
-      };
-      console.log('User Info:', this.userInfo); // Debugging: Log the userInfo object
+      const decodedToken: any = this.decodeToken(token);
+      const nomEmp = decodedToken?.name || 'N/A'; // Use 'name' instead of 'sub'
+      console.log('Decoded nomEmp:', nomEmp);
+  
+      // Fetch user data from the backend API
+      this.http.get(`http://localhost:8080/api/users/${encodeURIComponent(nomEmp)}`).subscribe(
+        (data) => {
+          console.log('Raw API Response:', data);
+          this.userInfo = data;
+          console.log('User Info:', this.userInfo);
+        },
+        (error) => {
+          console.error('Error fetching user info:', error);
+        }
+      );
     } else {
       console.error('No token found!');
     }
+  }
+
+  decodeToken(token: string): any {
+    try {
+      return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+      console.error('Error decoding token:', e);
+      return null;
+    }
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

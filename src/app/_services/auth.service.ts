@@ -9,6 +9,7 @@ import {jwtDecode} from 'jwt-decode';
 })
 export class AuthService {
   private apiUrl = 'http://localhost:8080/api/auth/info'; // The API endpoint
+  private sendTokenUrl = 'http://localhost:8080/api/auth/send-token'; // New endpoint for sending token
 
   constructor(private http: HttpClient) {}
 
@@ -31,14 +32,19 @@ export class AuthService {
     return this.http.post<any>(this.apiUrl, userInfo); // Send the info and return observable
   }
 
+  // New method to send userInfo to /send-token endpoint
+  sendUserInfoToSendToken(userInfo: any): Observable<any> {
+    return this.http.post<any>(this.sendTokenUrl, userInfo); // Send userInfo to /send-token endpoint
+  }
+
   // Decode the token to extract user info (like roles)
   getUserRole(): string[] | null {
     const token = this.getToken();
     if (token) {
       try {
-        const decodedToken: any = jwtDecode(token); // Decode the JWT token
-        console.log('Decoded Token:', decodedToken); // Debugging: Log the decoded token
-        return Array.isArray(decodedToken.role) ? decodedToken.role : null;
+        const decodedToken: any = jwtDecode(token);
+        console.log('Decoded Token:', decodedToken);
+        return decodedToken.roles || null;
       } catch (error) {
         console.error('Error decoding token:', error);
         return null;
