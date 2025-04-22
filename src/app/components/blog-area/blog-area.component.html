@@ -1,86 +1,93 @@
 <div class="blog-area pb-55">
     <div class="container">
         <div class="section-title text-center mb-55">
-            <h2>OUR Websites</h2>
+            <h2>Nos Sites Web</h2>
         </div>
         <div class="row">
+            <!-- GLPI -->
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog-wrap mb-30 scroll-zoom">
                     <div class="blog-img">
-                        <a href="#"><img src="assets/App_images/glpi_sh.png" alt=""></a>
+                        <a href="https://helpdesk.sofrecom-tunisie.com/glpi/" target="_blank"><img src="assets/App_images/glpi_sh.png" alt="GLPI"></a>
                     </div>
                     <div class="blog-content-wrap">
                         <div class="blog-content text-center">
-                            <h3><a href="#">Lorem ipsum dolor sit <br> amet consec.</a></h3>
-                            <span>By Shop <a href="#">Admin</a></span>
+                            <h3><a href="https://glpi-project.org/" target="_blank">Gérer Les Actifs Informatiques  </a></h3>
+                            <a href="https://helpdesk.sofrecom-tunisie.com/glpi/" target="_blank" class="btn btn-primary mt-2">Visit Application</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Sofrecom Brand -->
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog-wrap mb-30 scroll-zoom">
                     <div class="blog-img">
-                        <a href="#"><img src="assets/App_images/Sofrecom_brand.png" alt=""></a>                    </div>
+                        <a href="https://sof-france.sofrecom.fr/fr/sofrecom-brand" target="_blank"><img src="assets/App_images/Sofrecom_brand.png" alt="Sofrecom Brand"></a>
+                    </div>
                     <div class="blog-content-wrap">
                         <div class="blog-content text-center">
-                            <h3><a href="#">Lorem ipsum dolor sit <br> amet consec.</a></h3>
-                            <span>By Shop <a href="#">Admin</a></span>
+                            <h3><a href="https://www.sofrecom.com/" target="_blank">Decouvrir Sofrecom</a></h3>
+                            <a href="https://sof-france.sofrecom.fr/fr/sofrecom-brand" target="_blank" class="btn btn-primary mt-2">Visit Application</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Sof Travel -->
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog-wrap mb-30 scroll-zoom">
                     <div class="blog-img">
-                        <a href="#"><img src="assets/App_images/Sof_travel.png" alt=""></a>
+                        <a href="https://softravel.example.com/" target="_blank"><img src="assets/App_images/Sof_travel.png" alt="Sof Travel"></a>
                     </div>
                     <div class="blog-content-wrap">
                         <div class="blog-content text-center">
-                            <h3><a href="#">Lorem ipsum dolor sit <br> amet consec.</a></h3>
-                            <span>By Shop <a href="#">Admin</a></span>
+                            <h3><a href="https://softravel.example.com/" target="_blank">Planifiez Votre Voyage</a></h3>
+                            <a href="https://softravel.sofrecom-tunisie.com" target="_blank" class="btn btn-primary mt-2">Visit Application</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Sof Teletravail -->
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog-wrap mb-30 scroll-zoom">
                     <div class="blog-img">
-                        <a href="#"><img src="assets/App_images/Sof_teletravail.png" alt=""></a>
+                        <a href="	https://softun-teletravail.sofrecom-tunisie.com/" target="_blank"><img src="assets/App_images/Sof_teletravail.png" alt="Sof Teletravail"></a>
                     </div>
                     <div class="blog-content-wrap">
                         <div class="blog-content text-center">
-                            <h3><a href="#">Lorem ipsum dolor sit <br> amet consec.</a></h3>
-                            <span>By Shop <a href="#">Admin</a></span>
+                            <h3><a [routerLink]="'/teletravail'" routerLinkActive="active" target="_blank">Informations Sur Le Travail à Distance</a></h3>
+                            <a href="http://127.0.0.1:8000/profil" (click)="redirectToSoftt() " class="btn btn-primary mt-2">Visit Application</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- My Job -->
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog-wrap mb-30 scroll-zoom">
                     <div class="blog-img">
-                        <a href="#"><img src="assets/App_images/Myjob.png" alt=""></a>
+                        <a href="https://gateform.wam.sso.intraorange.com" target="_blank"><img src="assets/App_images/Myjob.png" alt="My Job"></a>
                     </div>
                     <div class="blog-content-wrap">
                         <div class="blog-content text-center">
-                            <h3><a href="#">Lorem ipsum dolor sit <br> amet consec.</a></h3>
-                            <span>By Shop <a href="#">Admin</a></span>
+                            <h3><a href="https://myjob.example.com/" target="_blank">Opportunités De Carrière</a></h3>
+                            <a href="https://orange.talent-soft.com/MyTalentsoft#/Me" target="_blank" class="btn btn-primary mt-2">Visit Application</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Sof Salle -->
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog-wrap mb-30 scroll-zoom">
                     <div class="blog-img">
-                        <a href="#"><img src="assets/App_images/sofsalle_sh.png" alt=""></a>
+                        <a href="http://softun-salle.sofrecom-tunisie.com" target="_blank"><img src="assets/App_images/sofsalle_sh.png" alt="Sof Salle"></a>
                     </div>
                     <div class="blog-content-wrap">
                         <div class="blog-content text-center">
-                            <h3><a href="#">Lorem ipsum dolor sit <br> amet consec.</a></h3>
-                            <span>By Shop <a href="#">Admin</a></span>
+                            <h3><a  [routerLink]="'/reservations'" routerLinkActive="active" target="_blank">Histoire Salles de Reunions</a></h3>
+                            <a href="http://softun-salle.sofrecom-tunisie.com" target="_blank" class="btn btn-primary mt-2">Visit Application</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-  </div>
+</div>

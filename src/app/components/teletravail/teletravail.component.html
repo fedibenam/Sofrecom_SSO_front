@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<!-- Profile Content -->
+<div class="container mt-4">
+  <div class="profile-card shadow-sm rounded p-4">
+    <!-- Profile Header -->
+    <div class="profile-header text-center mb-4">
+      <h2 class="profile-name text-primary">{{ userInfo?.nomEmp }}</h2>
+      <p class="profile-username text-muted">{{ userInfo?.mail }}</p>
+      <p class="profile-role text-secondary">{{ userInfo?.fonction }}</p>
+    </div>
+
+    <!-- Profile Details -->
+    <div class="profile-details">
+      <h3 class="profile-details-title text-center mb-3">Employee Details</h3>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <strong>Employee ID:</strong> <span>{{ userInfo?.matEmp }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <strong>Position:</strong> <span>{{ userInfo?.position }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <strong>Department:</strong> <span>{{ userInfo?.nomDept }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <strong>Manager:</strong> <span>{{ userInfo?.nomResp }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <strong>Business Unit:</strong> <span>{{ userInfo?.nameBu }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <strong>Region:</strong> <span>{{ userInfo?.region }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <strong>Country:</strong> <span>{{ userInfo?.pays }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <strong>Seniority:</strong> <span>{{ userInfo?.seniorite }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <strong>Total Leave Days:</strong> <span>{{ userInfo?.totConge }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <strong>Sick Leave Days:</strong> <span>{{ userInfo?.congeMaladie }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

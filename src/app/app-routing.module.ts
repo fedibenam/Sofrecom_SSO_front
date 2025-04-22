@@ -13,7 +13,14 @@ import { AppDirecteurDashboardComponent } from './dashboards/app-directeur-dashb
 import {NotreEntrepriseComponent} from './components/a_propos_de_nous/notre-entreprise/notre-entreprise.component'; // Add this import for the NotreEntrepriseComponent
 import {NotreEquipeComponent} from './components/a_propos_de_nous/notre-equipe/notre-equipe.component';
 import{ResponsableSocialeComponent} from './components/a_propos_de_nous/responsable-sociale/responsable-sociale.component';
-
+import{ReservationsComponent} from './components/reservations/reservations.component'; // Add this import for the ReservationsComponent
+import { TeletravailComponent } from './components/teletravail/teletravail.component'; // Add this import for the TeletravailComponent  
+import{ApplicationsComponent} from './components/applications/applications.component'; // Add this import for the ApplicationsComponent
+import{BusStationsComponent} from './components/bus-stations/bus-stations.component';
+import{RestaurantMenuComponent} from './components/restaurant-menu/restaurant-menu.component'; // Add this import for the RestaurantMenuComponent
+import{RestaurantScheduleComponent} from './components/restaurant-schedule/restaurant-schedule.component'; // Add this import for the RestaurantScheduleComponent
+import{NosBureauComponent} from './components/a_propos_de_nous/nos-bureau/nos-bureau.component'
+import{InnovationDigitilasationComponent} from './components/nos_expertise/innovation-digitilasation/innovation-digitilasation.component'
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
@@ -26,7 +33,14 @@ const routes: Routes = [
   {path: 'notre-entreprise', component: NotreEntrepriseComponent, canActivate: [AuthGuard]}, // Add this route for the SignalProblemComponent
   {path: 'notre-equipe', component: NotreEquipeComponent, canActivate: [AuthGuard]}, // Add this route for the SignalProblemComponent
   {path: 'responsable-sociale', component: ResponsableSocialeComponent, canActivate: [AuthGuard]}, // Add this route for the SignalProblemComponent
-
+  {path: 'reservations', component: ReservationsComponent, canActivate: [AuthGuard]}, // Add this route for the ReservationsComponent 
+  {path: 'teletravail', component: TeletravailComponent, canActivate: [AuthGuard]}, // Add this route for the TeletravailComponent
+  {path: 'applications', component: ApplicationsComponent, canActivate: [AuthGuard]}, // Add this route for the ApplicationsComponent
+  {path: 'Busstation', component: BusStationsComponent, canActivate: [AuthGuard]},
+  {path: 'restaurant-menu', component: RestaurantMenuComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantMenuComponent
+  {path: 'restaurant-schedule', component: RestaurantScheduleComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+  {path: 'nos_bureau', component: NosBureauComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+  {path: 'nos_bureau', component: InnovationDigitilasationComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
   { path: '**', redirectTo: '' },
 ];
 

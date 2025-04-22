@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<div class="container mt-5">
+  <div class="map-header text-center mb-4">
+    <h2 class="map-title">🚌 Sofrecom Transport Circuits</h2>
+    <p class="text-muted">Click on a marker to view the route to that stop</p>
+  </div>
+
+  <div class="map-section shadow rounded">
+    <div id="map" class="map-container"></div>
+  </div>
+
+  <div class="table-section mt-5">
+    <h4 class="text-center mb-3">📋 Circuits & Stops</h4>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped shadow-sm">
+        <thead class="table-dark">
+          <tr>
+            <th>Circuit</th>
+            <th>Stops</th>
+          </tr>
+        </thead>
+        <tbody id="circuitTableBody">
+          <!-- JS will populate this -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

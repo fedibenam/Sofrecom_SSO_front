@@ -1,0 +1,102 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .profile-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-header {
+    h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+  
+    p {
+      margin: 0;
+      font-size: 1rem;
+    }
+  
+    .profile-username {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+  
+    .profile-role {
+      font-size: 1rem;
+      color: #007bff;
+    }
+  }
+  
+  .profile-details {
+    .profile-details-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+  
+    .list-group-item {
+      font-size: 1rem;
+      padding: 10px 15px;
+      border: none;
+      border-bottom: 1px solid #e0e0e0;
+  
+      &:last-child {
+        border-bottom: none;
+      }
+  
+      strong {
+        color: #333;
+      }
+  
+      span {
+        color: #555;
+      }
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .profile-header h2 {
+      font-size: 1.5rem;
+    }
+  
+    .profile-details-title {
+      font-size: 1.2rem;
+    }
+  
+    .list-group-item {
+      font-size: 0.9rem;
+    }
+  }
+  /* filepath: c:\Users\fbenhamouda\Sofrecom_SSO_front\src\app\components\teletravail\teletravail.component.scss */
+
+.container {
+    margin-top: 30px; /* Add spacing below the header */
+    margin-bottom: 30px; /* Add spacing above the footer */
+  }
+  
+  .profile-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-header {
+    margin-bottom: 20px;
+  }
+  
+  .profile-details-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .list-group-item {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }

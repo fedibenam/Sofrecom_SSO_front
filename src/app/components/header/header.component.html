@@ -19,7 +19,7 @@
                                             <li class="mega-menu-title"><a href="#">À PROPOS DE NOUS</a></li>
                                             <li><a [routerLink]="'/notre-entreprise'" routerLinkActive="active">Notre entreprise</a></li>
                                             <li><a [routerLink]="'/notre-equipe'" routerLinkActive="active">Notre équipe</a></li>
-                                            <li><a href="#">Nos bureaux</a></li>
+                                            <li><a  [routerLink]="'/nos_bureau'" routerLinkActive="active">Nos bureaux</a></li>
                                             <li><a [routerLink]="'/responsable-sociale'" routerLinkActive="active">Responsabilité Sociale</a></li>
                                         </ul>
                                     </li>
@@ -49,7 +49,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="#"> Shop <i class="fa fa-angle-down"></i> </a>
+                            <li><a href="#"> INSIGHTS <i class="fa fa-angle-down"></i> </a>
                                 <ul class="mega-menu">
                                     <li>
                                         <ul>
@@ -74,31 +74,18 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="#">Collection</a></li>
                             <li><a href="#"> Pages <i class="fa fa-angle-down"></i></a>
                                 <ul class="submenu">
-                                    <li><a href="#">about us</a></li>
-                                    <li><a href="#">cart page</a></li>
-                                    <li><a href="#">checkout </a></li>
-                                    <li><a href="#">wishlist </a></li>
-                                    <li><a href="#">my account</a></li>
-                                    <li><a href="#">login / register </a></li>
-                                    <li><a href="#">contact us </a></li>
-                                    <li><a href="#">404 page </a></li>
+                                    <li><a [routerLink]="'/reservations'" routerLinkActive="active">Reservation</a></li>
+                                    <li><a [routerLink]="'/teletravail'" routerLinkActive="active"> Teletravaille</a></li>      
+                                    <li><a [routerLink]="'/Busstation'" routerLinkActive="active"> Busstation</a></li> 
+                                    <li><a [routerLink]="'/restaurant-schedule'" routerLinkActive="active"> Restaurant Menu</a></li> 
+    
+
                                 </ul>
                             </li>
-                            <li><a href="#">Blog <i class="fa fa-angle-down"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="#">blog standard</a></li>
-                                    <li><a href="#">blog no sidebar</a></li>
-                                    <li><a href="#">blog right sidebar</a></li>
-                                    <li><a href="#">blog details 1</a></li>
-                                    <li><a href="#">blog details 2</a></li>
-                                    <li><a href="#">blog details 3</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"> Signal </a></li>
-                            <li><a href="#"> Contact</a></li>
+                            
+                            <li><a [routerLink]="'/signal-problem'" routerLinkActive="active"> Signal </a></li>
                         </ul>
                     </nav>
                 </div>
@@ -115,10 +102,10 @@
                         </div> 
                     </div>
                     <div class="same-style account-satting">
-                        <a class="account-satting-active" href="#"><i class="pe-7s-user-female"></i></a>
+                        <a class="account-satting-active" ><i class="pe-7s-user-female"></i></a>
                         <div class="account-dropdown">
                             <ul>
-                                <li><a href="#">Applications</a></li>
+                                <li><a [routerLink]="'/applications'" routerLinkActive="active">Applications</a></li>
                                 <li><a  [routerLink]="'/profile'" routerLinkActive="active">my account</a></li>
                             </ul>
                         </div>

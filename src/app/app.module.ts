@@ -24,6 +24,14 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { NotreEntrepriseComponent } from './components/a_propos_de_nous/notre-entreprise/notre-entreprise.component';
 import { NotreEquipeComponent } from './components/a_propos_de_nous/notre-equipe/notre-equipe.component';
 import { ResponsableSocialeComponent } from './components/a_propos_de_nous/responsable-sociale/responsable-sociale.component';
+import { ReservationsComponent } from './components/reservations/reservations.component';
+import { TeletravailComponent } from './components/teletravail/teletravail.component';
+import { ApplicationsComponent } from './components/applications/applications.component';
+import { BusStationsComponent } from './components/bus-stations/bus-stations.component';
+import { RestaurantMenuComponent } from './components/restaurant-menu/restaurant-menu.component';
+import { RestaurantScheduleComponent } from './components/restaurant-schedule/restaurant-schedule.component';
+import { NosBureauComponent } from './components/a_propos_de_nous/nos-bureau/nos-bureau.component';
+import { InnovationDigitilasationComponent } from './components/nos_expertise/innovation-digitilasation/innovation-digitilasation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +54,14 @@ import { ResponsableSocialeComponent } from './components/a_propos_de_nous/respo
     NotreEntrepriseComponent,
     NotreEquipeComponent,
     ResponsableSocialeComponent,
+    ReservationsComponent,
+    TeletravailComponent,
+    ApplicationsComponent,
+    BusStationsComponent,
+    RestaurantMenuComponent,
+    RestaurantScheduleComponent,
+    NosBureauComponent,
+    InnovationDigitilasationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule],
   providers: [AuthService],

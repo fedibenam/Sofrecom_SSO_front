@@ -1,0 +1,105 @@
+<app-header></app-header>
+
+
+<div class="about-us-area bg-light-purple py-5 mb-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Text Content -->
+        <div class="col-xl-6 col-lg-6 col-md-12">
+          <div class="about-us-content">
+            <h3 class="section-title">NOS PRINCIPAUX SITES</h3>
+            <p class="about-description">
+                Notre présence en local, nous permet de comprendre les enjeux spécifiques de nos clients pour leur apporter conseils et solutions personnalisées.            </p>
+            <a href="#" class="btn-learn-more">En savoir plus</a>
+          </div>
+        </div>
+  
+        <!-- Image Content -->
+        <div class="col-xl-6 col-lg-6 col-md-12 text-center">
+          <div class="about-us-img">
+            <img class="img-fluid rounded shadow animated-image" src="assets/people_laughing.webp" alt="About Us">
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <div class="map-header text-center mb-4">
+          <h2 class="map-title"> Sofrecom PRINCIPAUX SITES</h2>
+          <p class="text-muted">Click on a marker to view the route to that stop</p>
+        </div>
+      
+
+      
+      <!-- Just before <app-footer> -->
+      <div id="map" class="my-4"></div>
+
+      <div class="strategies-section py-5 mb-5">
+  <div class="container">
+    <div class="row">
+      <!-- Navigation Column -->
+      <div class="col-12 col-lg-4 pr-lg-0 border-end border-primary">
+        <div class="nav flex-column nav-pills" id="info-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="about-tab" data-bs-toggle="pill" href="#about" role="tab" aria-controls="about" aria-selected="true">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-info-circle-fill me-2 text-primary"></i>
+              <span>À propos de Sofrecom</span>
+            </div>
+          </a>
+          <a class="nav-link" id="rennes-tab" data-bs-toggle="pill" href="#rennes" role="tab" aria-controls="rennes" aria-selected="false">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-geo-alt-fill me-2 text-success"></i>
+              <span>Adresse - Tunis</span>
+            </div>
+          </a>
+          <a class="nav-link" id="chatillon-tab" data-bs-toggle="pill" href="#chatillon" role="tab" aria-controls="chatillon" aria-selected="false">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-building me-2 text-warning"></i>
+              <span>Adresse - , Sfax</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Content Column -->
+      <div class="col-12 col-lg-8 pl-lg-0">
+        <div class="tab-content" id="info-tabContent">
+          <!-- About -->
+          <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
+            <div class="p-4 bg-light rounded shadow-sm">
+              <h3 class="mb-3">Sofrecom SA</h3>
+              <p>Sofrecom est un cabinet de conseil et d'ingénierie spécialisé dans les télécommunications.</p>
+              <p>Filiale du groupe Orange, Sofrecom conseille et accompagne le développement et la transformation numérique des principaux acteurs du secteur des télécommunications : opérateurs, gouvernements et institutions internationales.</p>
+            </div>
+          </div>
+
+          <!-- Rennes Address -->
+          <div class="tab-pane fade" id="rennes" role="tabpanel" aria-labelledby="rennes-tab">
+            <div class="p-4 bg-light rounded shadow-sm">
+              <h3 class="mb-3">Adresse - Tunis</h3>
+              <address>
+                 Tunis<br>
+                 Rue du Lac Biwa,<br>
+                Tunisie
+              </address>
+            </div>
+          </div>
+
+          <!-- Châtillon Address -->
+          <div class="tab-pane fade" id="chatillon" role="tabpanel" aria-labelledby="chatillon-tab">
+            <div class="p-4 bg-light rounded shadow-sm">
+              <h3 class="mb-3">Adresse - , Sfax</h3>
+              <address>
+                 Sfax<br>
+                 QQ92+Q4G, Ceinture Bourguiba,<br>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+  
+  <app-footer></app-footer>

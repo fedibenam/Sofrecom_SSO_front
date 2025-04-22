@@ -1,0 +1,127 @@
+<app-header></app-header>
+
+<div class="container mt-4">
+  <!-- Teletravail Section -->
+  <section class="teletravail-section mb-5">
+    <h2 class="text-center text-primary mb-4">Informations sur le télétravail</h2>
+    <div class="profile-card shadow-sm rounded p-4">
+      <!-- Profile Details -->
+      <div class="profile-details">
+        <h3 class="profile-details-title text-center mb-3">Détails de l'employé</h3>
+        <ul class="list-group">
+          <!-- Profile Header Rows -->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Nom :</strong> <span>{{ userInfo?.nomEmp }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Email :</strong> <span>{{ userInfo?.mail }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Rôle :</strong> <span>{{ userInfo?.fonction }}</span>
+          </li>
+
+          <!-- Employee Details Rows -->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>ID Employé :</strong> <span>{{ userInfo?.matEmp }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Poste :</strong> <span>{{ userInfo?.position }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Département :</strong> <span>{{ userInfo?.nomDept }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Manager :</strong> <span>{{ userInfo?.nomResp }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Unité commerciale :</strong> <span>{{ userInfo?.nameBu }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Région :</strong> <span>{{ userInfo?.region }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Pays :</strong> <span>{{ userInfo?.pays }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Ancienneté :</strong> <span>{{ userInfo?.seniorite }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Jours de congé total :</strong> <span>{{ userInfo?.totConge }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Jours de congé maladie :</strong> <span>{{ userInfo?.congeMaladie }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservations Section -->
+  <section class="reservations-section">
+    <h2 class="text-center text-primary mb-4">Historique des réservations</h2>
+    <div *ngIf="reservations.length > 0; else noReservations">
+      <div class="table-responsive shadow-sm rounded">
+        <table class="table table-striped table-hover align-middle table-bordered">
+          <thead class="table-primary text-center">
+            <tr>
+              <th>#</th>
+              <th>Titre</th>
+              <th>Description</th>
+              <th>Date et heure de début</th>
+              <th>Date et heure de fin</th>
+              <th>Salle</th>
+              <th>État</th>
+              <th>Équipements</th>
+              <th>Type de jour</th>
+              <th>Nombre de participants</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Reservation Rows -->
+            <tr *ngFor="let reservation of reservations; let i = index" class="text-center">
+              <td>{{ i + 1 }}</td>
+              <td>{{ reservation.reservationTitle }}</td>
+              <td>{{ reservation.description }}</td>
+              <td>{{ reservation.startDate }} {{ reservation.startTime }}</td>
+              <td>{{ reservation.endDate }} {{ reservation.endTime }}</td>
+              <td>{{ reservation.roomName }}</td>
+              <td>
+                <span class="badge" [ngClass]="reservation.stateRes ? 'bg-success' : 'bg-danger'">
+                  {{ reservation.stateRes ? 'Actif' : 'Inactif' }}
+                </span>
+              </td>
+              <td>
+                <span class="badge" [ngClass]="reservation.equipments ? 'bg-info' : 'bg-secondary'">
+                  {{ reservation.equipments ? 'Oui' : 'Non' }}
+                </span>
+              </td>
+              <td>
+                <ng-container *ngIf="reservation.dayOfWeek; else notDayOfWeek">
+                  Jour de la semaine
+                </ng-container>
+                <ng-template #notDayOfWeek>
+                  <ng-container *ngIf="reservation.dayOfMonth; else notDayOfMonth">
+                    Jour du mois
+                  </ng-container>
+                  <ng-template #notDayOfMonth>
+                    <ng-container *ngIf="reservation.allDay">
+                      Toute la journée
+                    </ng-container>
+                  </ng-template>
+                </ng-template>
+              </td>
+              <td>{{ reservation.numberPart }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <ng-template #noReservations>
+      <div class="text-center mt-5">
+        <p class="text-muted fs-5">Aucune réservation trouvée.</p>
+      </div>
+    </ng-template>
+  </section>
+</div>
+
+<app-footer></app-footer>

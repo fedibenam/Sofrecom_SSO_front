@@ -1,0 +1,82 @@
+.reservations-container {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+  
+    h2 {
+      color: #007bff;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+    .alert {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  
+    .table {
+      border-radius: 8px;
+      overflow: hidden;
+  
+      thead {
+        background-color: #007bff;
+        color: #fff;
+  
+        th {
+          font-size: 0.9rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          padding: 15px;
+        }
+      }
+  
+      tbody {
+        tr {
+          &:hover {
+            background-color: #f1f1f1;
+          }
+  
+          td {
+            font-size: 0.85rem;
+            color: #555;
+            padding: 12px;
+          }
+  
+          .badge {
+            font-size: 0.85rem;
+            padding: 5px 10px;
+            border-radius: 12px;
+          }
+  
+          .bg-success {
+            background-color: #28a745 !important;
+            color: #fff;
+          }
+  
+          .bg-danger {
+            background-color: #dc3545 !important;
+            color: #fff;
+          }
+  
+          .bg-info {
+            background-color: #17a2b8 !important;
+            color: #fff;
+          }
+  
+          .bg-secondary {
+            background-color: #6c757d !important;
+            color: #fff;
+          }
+        }
+      }
+    }
+  
+    .text-muted {
+      font-size: 1.1rem;
+      color: #6c757d;
+    }
+  }

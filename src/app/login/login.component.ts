@@ -1,9 +1,10 @@
-// filepath: src/app/login/login.component.ts
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-
+import { HttpErrorResponse } from '@angular/common/http';
+ 
+ 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,66 +16,60 @@ export class LoginComponent implements OnInit {
     fullName: '',
     groups: [],
   };
-
+ 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private http: HttpClient // Inject HttpClient
+    private http: HttpClient
   ) {}
-
+ 
   ngOnInit(): void {
-    // Fetch user info from user-info.json
     this.http.get<any>('/assets/user-info.json').subscribe(
       (data) => {
-        this.userInfo = data; // Populate userInfo with data from JSON
+        this.userInfo = data;
         console.log('User Info loaded:', this.userInfo);
-  
-        // Handle the login process
+ 
         this.authService.sendUserInfo(this.userInfo).subscribe(
-          (response) => {
+          (response: any) => {
             const token = response.token;
             if (token) {
-              this.authService.saveToken(token); // Save token to localStorage
-              this.router.navigate(['/dashboard']); // Redirect to dashboard
+              this.authService.saveToken(token);
+              this.router.navigate(['/dashboard']);
               console.log('Token saved:', token);
-  
-              // Send userInfo to the /send-token endpoint
-              this.authService.sendUserInfoToSendToken(this.userInfo).subscribe(
-                (sendTokenResponse) => {
+ 
+              // ✅ Call updated method name
+              this.authService.sendTokenToDjango().subscribe(
+                (sendTokenResponse: any) => {
                   console.log('Response from /send-token:', sendTokenResponse);
                 },
-                (error) => {
-                  console.error('Error sending userInfo to /send-token:', error);
+                (error: any) => {
+                  console.error('Error sending token to Django:', error);
                 }
               );
             }
-  
-            // Clear the userInfo object after processing
+ 
             this.clearUserInfo();
           },
-          (error) => {
+          (error: any) => {
             console.error('Error during login:', error);
           }
         );
       },
-      (error) => {
+      (error: any) => {
         console.error('Error loading user-info.json:', error);
       }
     );
-  
-    // Listen for login event
+ 
     window.addEventListener('userLoggedIn', () => {
       this.router.navigate(['/dashboard']);
     });
-  
-    // Listen for logout event
+ 
     window.addEventListener('userLoggedOut', () => {
       console.log('Logout detected, redirecting to login.');
       this.router.navigate(['/login']);
     });
   }
-
-  // Method to clear the userInfo object
+ 
   clearUserInfo(): void {
     this.userInfo = {
       username: '',
@@ -84,3 +79,4 @@ export class LoginComponent implements OnInit {
     console.log('User Info cleared:', this.userInfo);
   }
 }
+ 

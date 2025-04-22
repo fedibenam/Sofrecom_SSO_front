@@ -2,10 +2,11 @@
     "use strict";
     setTimeout(function(){
     /* Cart search */
-    $(".account-satting-active , .search-active").on("click", function(e) {
+    $(document).on("click", ".account-satting-active, .search-active", function (e) {
         e.preventDefault();
-        $(this).parent().find('.account-dropdown , .search-content').slideToggle('medium');
-    })
+        $(this).parent().find(".account-dropdown, .search-content").slideToggle("medium");
+    });
+    
     
     /* Cart dropdown */
     var iconCart = $('.icon-cart');

@@ -1,0 +1,40 @@
+.blog-area {
+    .blog-wrap {
+        .blog-img {
+            img {
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .blog-content {
+            h3 {
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-bottom: 10px;
+                a {
+                    color: #333;
+                    text-decoration: none;
+                    &:hover {
+                        color: #007bff;
+                    }
+                }
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+                &:hover {
+                    background-color: #0056b3;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

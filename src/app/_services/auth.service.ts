@@ -8,8 +8,8 @@ import {jwtDecode} from 'jwt-decode';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8080/api/auth/info'; // The API endpoint
-  private sendTokenUrl = 'http://localhost:8080/api/auth/send-token'; // New endpoint for sending token
+  private apiUrl = 'http://localhost:8080/api/auth/info'; // Spring Boot endpoint
+  private sendTokenUrl = 'http://127.0.0.1:8000/sso-login/'; // Django endpoint
 
   constructor(private http: HttpClient) {}
 
@@ -36,6 +36,46 @@ export class AuthService {
   sendUserInfoToSendToken(userInfo: any): Observable<any> {
     return this.http.post<any>(this.sendTokenUrl, userInfo); // Send userInfo to /send-token endpoint
   }
+
+  sendTokenToDjango(): Observable<any> {
+    const token = this.getToken();
+    if (!token) {
+      console.error('No token found to send to Django.');
+      return new Observable((observer) => {
+        observer.error('No token available.');
+      });
+    }
+ 
+    return this.http.post<any>(this.sendTokenUrl, { token }, {
+      withCredentials: true // 🔒 Send cookies/session if needed
+    });
+  }
+ 
+  loginToDjango() {
+    this.sendTokenToDjango().subscribe(
+      (res) => {
+        console.log('Token sent and user logged into Django:', res);
+        window.location.href = "http://127.0.0.1:8000/profil"; // ✅ SoftTT profile page
+      },
+      (err) => {
+        console.error('Error sending token to Django:', err);
+      }
+    );
+  }
+ 
+  redirectToSoftt() {
+    this.sendTokenToDjango().subscribe(
+      (res) => {
+        console.log('Token sent to Django for SoftTT:', res);
+        window.location.href = "http://127.0.0.1:8000/profil"; // 🔁 Redirect to Django app
+      },
+      (err) => {
+        console.error('Failed to send token to SoftTT app:', err);
+      }
+    );
+  }
+
+
 
   // Decode the token to extract user info (like roles)
   getUserRole(): string[] | null {
@@ -69,6 +109,18 @@ export class AuthService {
       console.log('No token found during checkForToken.');
     }
   }
+
+  
+  decodeToken(token: string): any {
+    try {
+      return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+      console.error('Error decoding token:', e);
+      return null;
+    }
+  }
+  
+
 
   logout(): void {
     localStorage.removeItem('jwtToken'); // Remove token from localStorage

@@ -1,0 +1,59 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.map-title {
+  font-size: 2.5rem;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.map-container {
+  height: 600px;
+  width: 100%;
+  border-radius: 12px;
+  background-color: #eaeaea;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.map-section {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+
+.table-section {
+  margin-top: 50px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+table th,
+table td {
+  vertical-align: top;
+  padding: 12px;
+}
+
+table td ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+app-header, app-footer {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}

@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Restaurant Schedule</h2>
+
+  <!-- PDF Upload Form -->
+  <div class="card shadow-sm p-4 mb-5">
+    <h4 class="card-title text-center mb-3">Upload PDF Schedule</h4>
+    <form (ngSubmit)="uploadPdf()" #uploadForm="ngForm">
+      <div class="form-group">
+        <label for="pdfFile" class="form-label">Select PDF File</label>
+        <input
+          type="file"
+          id="pdfFile"
+          name="pdfFile"
+          (change)="onFileSelected($event)"
+          required
+          class="form-control"
+        />
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" [disabled]="!selectedFile" class="btn btn-primary mt-3">
+          Upload PDF
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- PDF Viewer -->
+  <div *ngIf="pdfUrl" class="pdf-viewer-container">
+    <iframe
+      [src]="pdfUrl"
+      class="pdf-viewer"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+<app-footer></app-footer>

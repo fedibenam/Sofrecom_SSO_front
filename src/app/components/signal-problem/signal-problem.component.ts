@@ -1,51 +1,73 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../_services/auth.service';
 import { Router } from '@angular/router';
-import { jwtDecode } from "jwt-decode"; // Correct import for default export
 
 @Component({
   selector: 'app-signal-problem',
   templateUrl: './signal-problem.component.html',
   styleUrls: ['./signal-problem.component.scss']
 })
-export class SignalProblemComponent  implements OnInit {
-  userInfo: { username: string; fullName: string; groups: string[] } | null = null;
-  
-    constructor(private authService: AuthService,  private router: Router) {}
-    logout(): void {
-      this.authService.logout();
-      this.router.navigate(['/login']);
-    }
-  
-    ngOnInit(): void {
-      this.loadUserInfo();
-    }
-  
+export class SignalProblemComponent implements OnInit {
+  userInfo: { username: string; fullName: string } | null = null;
+
   formData = {
-    username: '',
     problemType: '',
-    description: ''
+    description: '',
+    username: '',
+    fullName: ''
   };
 
-  onSubmit(): void {
-    console.log('Form Submitted:', this.formData);
-    // Add logic to send the form data to a backend API or service
-    alert('Your problem has been submitted successfully!');
+  problemReports: any[] = []; // Holds all problem reports
+
+  constructor(private http: HttpClient, private authService: AuthService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.loadUserInfo();
+    this.fetchAllProblems(); // Fetch all problems on initialization
   }
 
-   loadUserInfo(): void {
-      const token = this.authService.getToken();
-      if (token) {
-        const decodedToken: any = jwtDecode(token);
-        console.log('Decoded Token:', decodedToken); // Debugging: Log the decoded token
-        this.userInfo = {
-          username: decodedToken?.sub || 'N/A', // Map 'sub' to 'username'
-          fullName: decodedToken?.name || 'N/A', // Map 'name' to 'fullName'
-          groups: decodedToken?.role || [] // Map 'role' to 'groups'
-        };
-        console.log('User Info:', this.userInfo); // Debugging: Log the userInfo object
-      } else {
-        console.error('No token found!');
-      }
+  loadUserInfo(): void {
+    const token = this.authService.getToken();
+    if (token) {
+      const decodedToken: any = this.authService.decodeToken(token);
+      this.userInfo = {
+        username: decodedToken?.sub || 'N/A',
+        fullName: decodedToken?.name || 'N/A'
+      };
+      // Pre-fill the username and fullName in the form
+      this.formData.username = this.userInfo.username;
+      this.formData.fullName = this.userInfo.fullName;
+    } else {
+      console.error('No token found!');
     }
+  }
+
+  onSubmit(): void {
+    const apiUrl = 'http://localhost:8080/api/problems/submit';
+    this.http.post(apiUrl, this.formData).subscribe(
+      (response) => {
+        console.log('Problem submitted successfully:', response);
+        alert('Votre problème a été soumis avec succès !');
+        this.fetchAllProblems(); // Refresh the table after submission
+      },
+      (error) => {
+        console.error('Error submitting problem:', error);
+        alert('Une erreur est survenue lors de la soumission du problème.');
+      }
+    );
+  }
+
+  fetchAllProblems(): void {
+    const apiUrl = 'http://localhost:8080/api/problems/all';
+    this.http.get<any[]>(apiUrl).subscribe(
+      (response) => {
+        console.log('Fetched problem reports:', response);
+        this.problemReports = response;
+      },
+      (error) => {
+        console.error('Error fetching problem reports:', error);
+      }
+    );
+  }
 }
