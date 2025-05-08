@@ -26,10 +26,10 @@
                                     <li>
                                         <ul>
                                             <li class="mega-menu-title"><a href="#">Nos expertises</a></li>
-                                            <li><a href="#">Digitalisation & Innovation</a></li>
-                                            <li><a href="#">Réseaux & SI</a></li>
-                                            <li><a href="#">Développement durable</a></li>
-                                            <li><a href="#">Organisation & Métiers</a></li>
+                                            <li><a [routerLink]="'/inovation_digitilisation'" routerLinkActive="active">Digitalisation & Innovation</a></li>
+                                            <li><a [routerLink]="'/reseau_telecom_si'" routerLinkActive="active">Réseaux & SI</a></li>
+                                            <li><a [routerLink]="'/developpement_durable'" routerLinkActive="active">Développement durable</a></li>
+                                            <li><a  [routerLink]="'/organisation_metier'" routerLinkActive="active">Organisation & Métiers</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -80,12 +80,16 @@
                                     <li><a [routerLink]="'/teletravail'" routerLinkActive="active"> Teletravaille</a></li>      
                                     <li><a [routerLink]="'/Busstation'" routerLinkActive="active"> Busstation</a></li> 
                                     <li><a [routerLink]="'/restaurant-schedule'" routerLinkActive="active"> Restaurant Menu</a></li> 
-    
+                                    <li><a [routerLink]="'/app-missions'" routerLinkActive="active"> Travel History</a></li> 
+                                    <li><a [routerLink]="'/fact_demandes'" routerLinkActive="active"> Demandes et Factures</a></li> 
+                                    <li><a [routerLink]="'/Mission_interne'" routerLinkActive="active"> MIssion Interne</a></li> 
+                                    <li><a [routerLink]="'/conge-travail'" routerLinkActive="active"> Conge Historique</a></li> 
+                                    <li><a [routerLink]="'/Formation_disponible'" routerLinkActive="active"> Formation Disponible</a></li> 
 
                                 </ul>
                             </li>
                             
-                            <li><a [routerLink]="'/signal-problem'" routerLinkActive="active"> Signal </a></li>
+                            <li><a [routerLink]="'/signal-problem'" routerLinkActive="active"> Contact </a></li>
                         </ul>
                     </nav>
                 </div>

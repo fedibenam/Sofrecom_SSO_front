@@ -10,6 +10,7 @@ import {jwtDecode} from 'jwt-decode';
 export class AuthService {
   private apiUrl = 'http://localhost:8080/api/auth/info'; // Spring Boot endpoint
   private sendTokenUrl = 'http://127.0.0.1:8000/sso-login/'; // Django endpoint
+  private apiUrl1 = 'http://localhost:8080/api/auth'; // Spring Boot endpoint
 
   constructor(private http: HttpClient) {}
 
@@ -32,6 +33,15 @@ export class AuthService {
     return this.http.post<any>(this.apiUrl, userInfo); // Send the info and return observable
   }
 
+  sendUserInfoToSofsallesBackend(userInfo: any): Observable<any> {
+    const url = `${this.apiUrl1}/sofsalle`; // Endpoint for sending user info
+    return this.http.post<any>(url, userInfo, {
+      headers: { 'Content-Type': 'application/json' }, // Ensure JSON content type
+      withCredentials: true, // Include cookies/session if needed
+    });
+  }
+
+  
   // New method to send userInfo to /send-token endpoint
   sendUserInfoToSendToken(userInfo: any): Observable<any> {
     return this.http.post<any>(this.sendTokenUrl, userInfo); // Send userInfo to /send-token endpoint

@@ -1,0 +1,71 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <h2 class="text-center text-primary mb-4">Training Sessions</h2>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Planned Sessions -->
+  <div *ngIf="plannedSessions.length > 0" class="mt-4">
+    <h3 class="text-success">Planned Sessions for Next Month</h3>
+    <div class="row g-4">
+      <div *ngFor="let session of plannedSessions" class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary mb-3">{{ session.libelle_session }}</h5>
+            <ul class="list-unstyled mb-0">
+              <li><strong>Matricule:</strong> {{ session.matricule }}</li>
+              <li><strong>Date:</strong> {{ session.date_session | date: 'short' }}</li>
+              <li><strong>Employee:</strong> {{ session.nom_prenom }}</li>
+              <li><strong>Manager:</strong> {{ session.manager }}</li>
+              <li><strong>Director:</strong> {{ session.directeur }}</li>
+              <li><strong>Direction:</strong> {{ session.direction }}</li>
+              <li><strong>Stage:</strong> {{ session.libelle_stage }}</li>
+              <li><strong>Days:</strong> {{ session.nb_jours }}</li>
+              <li><strong>Type:</strong> {{ session.int_ext }}</li>
+              <li><strong>Domain:</strong> {{ session.domaine }}</li>
+              <li><strong>Status:</strong> {{ session.etat_session }}</li>
+              <li><strong>Organism:</strong> {{ session.organisme || 'N/A' }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Completed Sessions -->
+  <div *ngIf="completedSessions.length > 0" class="mt-5">
+    <h3 class="text-info">Completed Sessions</h3>
+    <div class="row g-4">
+      <div *ngFor="let session of completedSessions" class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary mb-3">{{ session.libelle_session }}</h5>
+            <ul class="list-unstyled mb-0">
+              <li><strong>Matricule:</strong> {{ session.matricule }}</li>
+              <li><strong>Date:</strong> {{ session.date_session | date: 'short' }}</li>
+              <li><strong>Employee:</strong> {{ session.nom_prenom }}</li>
+              <li><strong>Manager:</strong> {{ session.manager }}</li>
+              <li><strong>Director:</strong> {{ session.directeur }}</li>
+              <li><strong>Direction:</strong> {{ session.direction }}</li>
+              <li><strong>Stage:</strong> {{ session.libelle_stage }}</li>
+              <li><strong>Days:</strong> {{ session.nb_jours }}</li>
+              <li><strong>Type:</strong> {{ session.int_ext }}</li>
+              <li><strong>Domain:</strong> {{ session.domaine }}</li>
+              <li><strong>Status:</strong> {{ session.etat_session }}</li>
+              <li><strong>Organism:</strong> {{ session.organisme || 'N/A' }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No Results -->
+  <div *ngIf="plannedSessions.length === 0 && completedSessions.length === 0 && !errorMessage" class="text-center mt-4">
+    <p class="text-muted">No training sessions found.</p>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,75 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "Sofrecom SSO System" {
+    class Employee {
+        +id: number
+        +name: string
+        +email: string
+        +role: string
+        +login(): void
+        +makeReservation(): void
+        +reportIssue(): void
+    }
+
+    class Administrator {
+        +id: number
+        +name: string
+        +email: string
+        +role: string
+        +manageUsers(): void
+        +uploadPDF(): void
+        +generateReports(): void
+    }
+
+    class Reservation {
+        +id: number
+        +date: Date
+        +resource: string
+        +status: string
+        +confirm(): void
+        +cancel(): void
+    }
+
+    class ProblemReport {
+        +id: number
+        +description: string
+        +status: string
+        +submit(): void
+        +trackStatus(): void
+    }
+
+    class PDFFile {
+        +id: number
+        +fileName: string
+        +uploadDate: Date
+        +download(): void
+    }
+
+    class BusStation {
+        +id: number
+        +name: string
+        +latitude: number
+        +longitude: number
+        +viewRoutes(): void
+    }
+
+    class RestaurantSchedule {
+        +id: number
+        +day: string
+        +openingTime: string
+        +closingTime: string
+        +viewSchedule(): void
+    }
+
+    Employee "1" -- "0..*" Reservation : makes
+    Employee "1" -- "0..*" ProblemReport : submits
+    Employee "1" -- "0..*" PDFFile : downloads
+    Employee "1" -- "0..*" BusStation : views
+    Employee "1" -- "0..*" RestaurantSchedule : checks
+
+    Administrator "1" -- "0..*" PDFFile : manages
+    Administrator "1" -- "0..*" Reservation : oversees
+    Administrator "1" -- "0..*" ProblemReport : resolves
+}
+@enduml

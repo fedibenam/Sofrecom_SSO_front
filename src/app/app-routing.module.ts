@@ -21,6 +21,15 @@ import{RestaurantMenuComponent} from './components/restaurant-menu/restaurant-me
 import{RestaurantScheduleComponent} from './components/restaurant-schedule/restaurant-schedule.component'; // Add this import for the RestaurantScheduleComponent
 import{NosBureauComponent} from './components/a_propos_de_nous/nos-bureau/nos-bureau.component'
 import{InnovationDigitilasationComponent} from './components/nos_expertise/innovation-digitilasation/innovation-digitilasation.component'
+import { ReseauTelecomSiComponent } from './components/nos_expertise/reseau-telecom-si/reseau-telecom-si.component';
+import { DeveloppementDurableComponent } from './components/nos_expertise/developpement-durable/developpement-durable.component';
+import { OrganisationMetiersComponent } from './components/nos_expertise/organisation-metiers/organisation-metiers.component';
+import {MissionsComponent} from './components/missions/missions.component'; // Add this import for the MissionsComponent
+import { DemandesComponent } from './components/demandes/demandes.component';
+import { MissionsInterneComponent } from './components/missions-interne/missions-interne.component'; // Add this import for the MissionsInterneComponent
+import {CongesComponent} from './components/conges/conges.component'; // Add this import for the CongesComponent
+import { FormationsComponent } from './components/formations/formations.component';
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
@@ -40,7 +49,16 @@ const routes: Routes = [
   {path: 'restaurant-menu', component: RestaurantMenuComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantMenuComponent
   {path: 'restaurant-schedule', component: RestaurantScheduleComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
   {path: 'nos_bureau', component: NosBureauComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
-  {path: 'nos_bureau', component: InnovationDigitilasationComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+  {path: 'inovation_digitilisation', component: InnovationDigitilasationComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+  {path: 'reseau_telecom_si', component: ReseauTelecomSiComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+  {path: 'developpement_durable', component: DeveloppementDurableComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+  {path: 'organisation_metier', component: OrganisationMetiersComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+  {path: 'app-missions', component: MissionsComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+  {path: 'fact_demandes', component: DemandesComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+  {path: 'Mission_interne', component: MissionsInterneComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+  {path: 'conge-travail', component: CongesComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+  {path: 'Formation_disponible', component: FormationsComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
+
   { path: '**', redirectTo: '' },
 ];
 

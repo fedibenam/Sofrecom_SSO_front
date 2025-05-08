@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <h2 class="text-center text-primary mb-4">Demandes</h2>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Display Demand Data -->
+  <div *ngIf="demandes.length > 0" class="mt-4">
+    <h3 class="text-success mb-4">Results:</h3>
+    <div class="row g-4">
+      <div *ngFor="let demande of demandes" class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary mb-3">{{ demande.fournisseur }}</h5>
+            <ul class="list-unstyled mb-0">
+              <li><strong>Date de Création DA:</strong> {{ demande.date_creation_da | date: 'short' }}</li>
+              <li><strong>Devise:</strong> {{ demande.devise }}</li>
+              <li><strong>Date de Création Facture:</strong> {{ demande.date_creation_fact || 'N/A' }}</li>
+              <li><strong>Prix Facture:</strong> {{ demande.prix_fact || 'N/A' }}</li>
+              <li><strong>Nom Créateur Facture:</strong> {{ demande.nom_createur_fact || 'N/A' }}</li>
+              <li><strong>Date Début Livraison:</strong> {{ demande.dac_dat_deb_livraison }}</li>
+              <li><strong>Date Fin Livraison:</strong> {{ demande.dac_dat_fin_livraison }}</li>
+              <li><strong>Code BC:</strong> {{ demande.code_bc || 'N/A' }}</li>
+              <li><strong>DA Code:</strong> {{ demande.da_code || 'N/A' }}</li>
+              <li><strong>Code Facture:</strong> {{ demande.code_fact || 'N/A' }}</li>
+              <li><strong>Statut BC:</strong> {{ demande.statut_bc || 'N/A' }}</li>
+              <li><strong>Statut Facture:</strong> {{ demande.statut_fact || 'N/A' }}</li>
+              <li><strong>Description:</strong> {{ demande.description }}</li>
+              <li><strong>Nom Demandeur:</strong> {{ demande.nom_demandeur }}</li>
+              <li><strong>DAC ID:</strong> {{ demande.dac_id }}</li>
+              <li><strong>Statut DA:</strong> {{ demande.statut_da }}</li>
+              <li><strong>Prix Facture TTC:</strong> {{ demande.prix_fact_ttc || 'N/A' }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No Results -->
+  <div *ngIf="demandes.length === 0 && !errorMessage" class="text-center mt-4">
+    <p class="text-muted">No demandes found.</p>
+  </div>
+</div>
+<app-footer></app-footer>

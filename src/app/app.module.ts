@@ -32,6 +32,15 @@ import { RestaurantMenuComponent } from './components/restaurant-menu/restaurant
 import { RestaurantScheduleComponent } from './components/restaurant-schedule/restaurant-schedule.component';
 import { NosBureauComponent } from './components/a_propos_de_nous/nos-bureau/nos-bureau.component';
 import { InnovationDigitilasationComponent } from './components/nos_expertise/innovation-digitilasation/innovation-digitilasation.component';
+import { ReseauTelecomSiComponent } from './components/nos_expertise/reseau-telecom-si/reseau-telecom-si.component';
+import { DeveloppementDurableComponent } from './components/nos_expertise/developpement-durable/developpement-durable.component';
+import { OrganisationMetiersComponent } from './components/nos_expertise/organisation-metiers/organisation-metiers.component';
+import { MissionsComponent } from './components/missions/missions.component';
+import { DemandesComponent } from './components/demandes/demandes.component';
+import { MissionsInterneComponent } from './components/missions-interne/missions-interne.component';
+import { CongesComponent } from './components/conges/conges.component';
+import { FormationsComponent } from './components/formations/formations.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +71,14 @@ import { InnovationDigitilasationComponent } from './components/nos_expertise/in
     RestaurantScheduleComponent,
     NosBureauComponent,
     InnovationDigitilasationComponent,
+    ReseauTelecomSiComponent,
+    DeveloppementDurableComponent,
+    OrganisationMetiersComponent,
+    MissionsComponent,
+    DemandesComponent,
+    MissionsInterneComponent,
+    CongesComponent,
+    FormationsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule],
   providers: [AuthService],

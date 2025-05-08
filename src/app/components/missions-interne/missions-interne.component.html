@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Mission Details</h2>
+  
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Display Mission Data -->
+    <div *ngIf="missions.length > 0" class="mt-4">
+      <h3 class="text-success">Results:</h3>
+      <div class="row g-4">
+        <div *ngFor="let mission of missions" class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-primary mb-3">Mission ID: {{ mission.idMission }}</h5>
+              <ul class="list-unstyled mb-0">
+                <li><strong>Status:</strong> {{ mission.codeStatus }}</li>
+                <li><strong>Start Date:</strong> {{ mission.dateDebut | date: 'short' }}</li>
+                <li><strong>End Date:</strong> {{ mission.dateFin | date: 'short' }}</li>
+                <li><strong>Destination:</strong> {{ mission.destination }}</li>
+                <li><strong>Transport Aller:</strong> {{ mission.transportAller }}</li>
+                <li><strong>Transport Retour:</strong> {{ mission.transportRetour }}</li>
+                <li><strong>Collaborator:</strong> {{ mission.firstName }} {{ mission.lastName }}</li>
+                <li><strong>Matricule:</strong> {{ mission.matriculeCollab }}</li>
+                <li><strong>Business Unit:</strong> {{ mission.codeBu }}</li>
+                <li><strong>Expense Price:</strong> {{ mission.prixDepense || 'N/A' }}</li>
+                <li><strong>Expense Type:</strong> {{ mission.typeDepense || 'N/A' }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- No Results -->
+    <div *ngIf="missions.length === 0 && !errorMessage" class="text-center mt-4">
+      <p class="text-muted">No missions found for the logged-in user.</p>
+    </div>
+  </div>
+
+  <app-footer></app-footer>

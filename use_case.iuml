@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+
+actor Employee as E
+actor Administrator as A
+
+rectangle "Sofrecom SSO System" {
+    usecase "Login to System" as UC1
+    usecase "View Restaurant Schedules" as UC2
+    usecase "Make Reservations for Resources" as UC3
+    usecase "Report Technical or Operational Issues" as UC4
+    usecase "View Bus Station Routes" as UC5
+    usecase "Download Important Documents (PDF)" as UC6
+    usecase "Manage User Accounts and Roles" as UC7
+    usecase "Upload and Manage PDF Files" as UC8
+    usecase "Generate and View System Reports" as UC9
+}
+
+E --> UC1 : "Authenticate"
+E --> UC3 : "Reserve Resources"
+E --> UC4 : "Submit Issues"
+E --> UC5 : "Access Routes"
+
+A --> UC1 : "Authenticate"
+A --> UC7 : "Manage Users"
+A --> UC8 : "Upload PDFs"
+A --> UC9 : "Generate Reports"
+
+UC3 --> UC2 : "Check Availability"
+UC8 --> UC6 : "Provide Documents for Download"
+@enduml
