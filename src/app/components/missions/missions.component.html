@@ -1,129 +1,115 @@
-<app-header></app-header>
 
-<div class="container mt-5">
-  <!-- Dropdown for Mission Status -->
-  <div class="mb-4">
-    <label for="missionStatus" class="form-label fw-bold">Select Mission Status:</label>
-    <select
-      id="missionStatus"
-      class="form-select shadow-sm"
-      [(ngModel)]="selectedStatus"
-      (change)="onStatusChange()"
-    >
-      <option value="CREE">CREE</option>
-      <option value="VALIDEE">VALIDEE</option>
-      <option value="ARCHIVEE">ARCHIVEE</option>
-      <option value="ANNULEE">ANNULEE</option>
-      <option value="APPROUVEE">APPROUVEE</option>
-    </select>
+<div class="container py-5">
+  
+  <!-- Mission Status Dropdown -->
+  <div class="row mb-5">
+    <div class="col-md-6 mx-auto">
+      <label for="missionStatus" class="form-label fw-bold mb-2">Select Mission Status:</label>
+      <select
+        id="missionStatus"
+        class="form-select shadow-sm"
+        [(ngModel)]="selectedStatus"
+        (change)="onStatusChange()"
+      >
+        <option *ngFor="let status of ['CREE', 'VALIDEE', 'ARCHIVEE', 'ANNULEE', 'APPROUVEE']" [value]="status">
+          {{ status }}
+        </option>
+      </select>
+    </div>
   </div>
 
   <!-- Missions Section -->
-  <section class="missions-section mb-5">
-    <h2 class="text-center text-primary mb-4">Missions ({{ selectedStatus }})</h2>
-    <div class="card shadow-sm p-4 border-0">
-      <ul *ngIf="missions.length > 0; else noMissions" class="list-group list-group-flush">
-        <li
-          *ngFor="let mission of missions | slice: 0:missionsLimit"
-          class="list-group-item border-bottom"
-        >
-          <div class="d-flex justify-content-between">
-            <div>
-              <p class="mb-1"><strong>Mission ID:</strong> {{ mission.id }}</p>
-              <p class="mb-1"><strong>Designation:</strong> {{ mission.designation }}</p>
-              <p class="mb-1"><strong>Type:</strong> {{ mission.type }}</p>
-              <p class="mb-1"><strong>Status:</strong> {{ mission.etat }}</p>
-            </div>
-            <div>
-              <p class="mb-1"><strong>Start Date:</strong> {{ mission.dateDebutMission }}</p>
-              <p class="mb-1"><strong>End Date:</strong> {{ mission.dateFinMission }}</p>
-              <p class="mb-1"><strong>Total Tickets:</strong> {{ mission.totalBillet }}</p>
-              <p class="mb-1"><strong>Liquidation Status:</strong> {{ mission.statusLiquidation }}</p>
+  <section class="mb-5">
+    <h2 class="section-title text-primary text-center mb-4">Missions ({{ selectedStatus }})</h2>
+    <div class="card shadow-sm p-4 border-0 rounded">
+      <div *ngIf="missions.length > 0; else noMissions">
+        <div class="row g-3">
+          <div class="col-md-6" *ngFor="let mission of missions | slice: 0:missionsLimit">
+            <div class="list-group-item p-3 border rounded shadow-sm">
+              <h5 class="fw-bold">Mission ID: {{ mission.id }}</h5>
+              <p><strong>Designation:</strong> {{ mission.designation }}</p>
+              <p><strong>Type:</strong> {{ mission.type }}</p>
+              <p><strong>Status:</strong> {{ mission.etat }}</p>
+              <p><strong>Start Date:</strong> {{ mission.dateDebutMission }}</p>
+              <p><strong>End Date:</strong> {{ mission.dateFinMission }}</p>
+              <p><strong>Total Tickets:</strong> {{ mission.totalBillet }}</p>
+              <p><strong>Liquidation:</strong> {{ mission.statusLiquidation }}</p>
             </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
       <ng-template #noMissions>
         <p class="text-center text-muted">No missions found for the selected status.</p>
       </ng-template>
-      <div *ngIf="missions.length > missionsLimit" class="text-center mt-3">
+      <div class="text-center mt-3" *ngIf="missions.length > missionsLimit">
         <button class="btn btn-primary shadow-sm" (click)="loadMoreMissions()">Load More</button>
       </div>
     </div>
   </section>
 
   <!-- Past Missions Section -->
-  <section class="past-missions-section mb-5">
-    <h2 class="text-center text-success mb-4">Past Missions</h2>
-    <div class="card shadow-sm p-4 border-0">
-      <ul *ngIf="pastMissions.length > 0; else noPastMissions" class="list-group list-group-flush">
-        <li
-          *ngFor="let mission of pastMissions | slice: 0:pastMissionsLimit"
-          class="list-group-item border-bottom"
-        >
-          <div class="d-flex justify-content-between">
-            <div>
-              <p class="mb-1"><strong>Mission ID:</strong> {{ mission.id }}</p>
-              <p class="mb-1"><strong>Designation:</strong> {{ mission.designation }}</p>
-              <p class="mb-1"><strong>Type:</strong> {{ mission.type }}</p>
-              <p class="mb-1"><strong>Status:</strong> {{ mission.etat }}</p>
-            </div>
-            <div>
-              <p class="mb-1"><strong>Start Date:</strong> {{ mission.dateDebutMission }}</p>
-              <p class="mb-1"><strong>End Date:</strong> {{ mission.dateFinMission }}</p>
-              <p class="mb-1"><strong>Total Tickets:</strong> {{ mission.totalBillet }}</p>
-              <p class="mb-1"><strong>Liquidation Status:</strong> {{ mission.statusLiquidation }}</p>
+  <section class="mb-5">
+    <h2 class="section-title text-success text-center mb-4">Past Missions</h2>
+    <div class="card shadow-sm p-4 border-0 rounded">
+      <div *ngIf="pastMissions.length > 0; else noPastMissions">
+        <div class="row g-3">
+          <div class="col-md-6" *ngFor="let mission of pastMissions | slice: 0:pastMissionsLimit">
+            <div class="list-group-item p-3 border rounded shadow-sm">
+              <h5 class="fw-bold">Mission ID: {{ mission.id }}</h5>
+              <p><strong>Designation:</strong> {{ mission.designation }}</p>
+              <p><strong>Type:</strong> {{ mission.type }}</p>
+              <p><strong>Status:</strong> {{ mission.etat }}</p>
+              <p><strong>Start Date:</strong> {{ mission.dateDebutMission }}</p>
+              <p><strong>End Date:</strong> {{ mission.dateFinMission }}</p>
+              <p><strong>Total Tickets:</strong> {{ mission.totalBillet }}</p>
+              <p><strong>Liquidation:</strong> {{ mission.statusLiquidation }}</p>
             </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
       <ng-template #noPastMissions>
         <p class="text-center text-muted">No past missions found.</p>
       </ng-template>
-      <div *ngIf="pastMissions.length > pastMissionsLimit" class="text-center mt-3">
+      <div class="text-center mt-3" *ngIf="pastMissions.length > pastMissionsLimit">
         <button class="btn btn-success shadow-sm" (click)="loadMorePastMissions()">Load More</button>
       </div>
     </div>
   </section>
 
   <!-- Employees Section -->
-  <section class="employees-section mb-5">
-    <h2 class="text-center text-info mb-4">Employees Managed by {{ employees[0]?.nomManager || 'Manager' }}</h2>
-    <div class="card shadow-sm p-4 border-0">
-      <ul *ngIf="employees.length > 0; else noEmployees" class="list-group list-group-flush">
-        <li
-          *ngFor="let employee of employees | slice: 0:employeesLimit"
-          class="list-group-item border-bottom"
-        >
-          <div class="d-flex justify-content-between">
-            <div>
-              <p class="mb-1"><strong>Last Name:</strong> {{ employee.nom }}</p>
-              <p class="mb-1"><strong>First Name:</strong> {{ employee.prenom }}</p>
-              <p class="mb-1"><strong>Matricule:</strong> {{ employee.matricule }}</p>
-              <p class="mb-1"><strong>Direction Code:</strong> {{ employee.code_direction }}</p>
-            </div>
-            <div>
-              <p class="mb-1"><strong>Designation:</strong> {{ employee.designation }}</p>
-              <p class="mb-1"><strong>Type:</strong> {{ employee.type }}</p>
-              <p class="mb-1"><strong>Start Date:</strong> {{ employee.date_debut_mission }}</p>
-              <p class="mb-1"><strong>End Date:</strong> {{ employee.date_fin_mission }}</p>
+  <section class="mb-5">
+    <h2 class="section-title text-info text-center mb-4">
+      Employees Managed by {{ employees[0]?.nomManager || 'Manager' }}
+    </h2>
+    <div class="card shadow-sm p-4 border-0 rounded">
+      <div *ngIf="employees.length > 0; else noEmployees">
+        <div class="row g-3">
+          <div class="col-md-6" *ngFor="let employee of employees | slice: 0:employeesLimit">
+            <div class="list-group-item p-3 border rounded shadow-sm">
+              <h5 class="fw-bold">Name: {{ employee.nom }} {{ employee.prenom }}</h5>
+              <p><strong>Matricule:</strong> {{ employee.matricule }}</p>
+              <p><strong>Direction Code:</strong> {{ employee.code_direction }}</p>
+              <p><strong>Designation:</strong> {{ employee.designation }}</p>
+              <p><strong>Type:</strong> {{ employee.type }}</p>
+              <p><strong>Start Date:</strong> {{ employee.date_debut_mission }}</p>
+              <p><strong>End Date:</strong> {{ employee.date_fin_mission }}</p>
             </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
       <ng-template #noEmployees>
         <p class="text-center text-muted">No employees found.</p>
       </ng-template>
-      <div *ngIf="employees.length > employeesLimit" class="text-center mt-3">
+      <div class="text-center mt-3" *ngIf="employees.length > employeesLimit">
         <button class="btn btn-info shadow-sm" (click)="loadMoreEmployees()">Load More</button>
       </div>
     </div>
   </section>
 
   <!-- Error Message -->
-  <div *ngIf="errorMessage" class="alert alert-danger text-center mt-4 shadow-sm">
+  <div *ngIf="errorMessage" class="alert alert-danger text-center mt-4 shadow-sm rounded">
     {{ errorMessage }}
   </div>
+
 </div>
 
-<app-footer></app-footer>

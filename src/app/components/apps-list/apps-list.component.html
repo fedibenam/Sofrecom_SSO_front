@@ -1,0 +1,29 @@
+<section class="apps-list-section">
+    <h2 class="section-title">
+      Applications Internes
+      <span class="title-underline"></span>
+    </h2>
+   
+    <div class="apps-grid">
+      <ng-container *ngFor="let app of appData; let i = index">
+        <div
+          class="app-card"
+          [ngClass]="{ 'hover-grow': hoveredCardIndex === i }"
+          (mouseenter)="startHoverDelay(i)"
+          (mouseleave)="cancelHoverDelay()"
+          *ngIf="!app.if || (app.if === 'collab' && isCollaborateur) || (app.if === 'managerOrDirector' && isManagerOrDirector)"
+        >
+          <h3>{{ app.name }}</h3>
+   
+          <div class="hover-reveal">
+            <button class="btn-info" [routerLink]="app.infoLink">Détails</button>
+            <button class="btn-access" (click)="openRedirect(app.redirect)">Accéder</button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+   
+    <div class="more-btn-container">
+      <button class="more-button" [routerLink]="'/applications'">Voir plus</button>
+    </div>
+  </section>

@@ -1,0 +1,23 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background-image: url('/assets/BG.png');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+  }
+ 
+/*  .container-boxed {
+    width: auto;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: transparent;
+  }*/
+ 
+  :host::before {
+    content: '';
+    display: block;
+    height: 70px; // matches header height
+  }
+ 

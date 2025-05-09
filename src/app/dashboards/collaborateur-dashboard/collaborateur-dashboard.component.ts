@@ -3,7 +3,7 @@ import { Router } from '@angular/router';  // ✅ Import Router
 import { AuthService } from '../../_services/auth.service';
 import { OnInit } from '@angular/core';
 import { jwtDecode } from "jwt-decode"; // Correct import for default export
-
+ 
 @Component({
   selector: 'app-collaborateur-dashboard',
   templateUrl: './collaborateur-dashboard.component.html',
@@ -11,9 +11,9 @@ import { jwtDecode } from "jwt-decode"; // Correct import for default export
 })
 export class CollaborateurDashboardComponent implements OnInit {
   userInfo: { username: string; fullName: string; groups: string[] } | null = null;
-
+ 
   constructor(private authService: AuthService, private router: Router) {}
-
+ 
   ngOnInit(): void {
     const token = this.authService.getToken();
     if (token) {
@@ -25,16 +25,16 @@ export class CollaborateurDashboardComponent implements OnInit {
       };
     }
   }
-
-  logout(): void {
+ 
+ /* logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
-
-  }
-
-  
-
-  applications = [
+ 
+  }*/
+ 
+ 
+ 
+/*  applications = [
     {
       title: 'SofSalle',
       description: 'Réservez une salle pour vos réunions au sein de l’entreprise.',
@@ -71,7 +71,6 @@ export class CollaborateurDashboardComponent implements OnInit {
       image: '/assets/App_images/Sof_teletravail.png',
       link: 'https://softun-teletravail.sofrecom-tunisie.com'
     }
-
-  ];
+ 
+  ];*/
 }
-

@@ -29,6 +29,15 @@ import { DemandesComponent } from './components/demandes/demandes.component';
 import { MissionsInterneComponent } from './components/missions-interne/missions-interne.component'; // Add this import for the MissionsInterneComponent
 import {CongesComponent} from './components/conges/conges.component'; // Add this import for the CongesComponent
 import { FormationsComponent } from './components/formations/formations.component';
+import { BusHomeComponent } from './components/bus-home/bus-home.component';
+import { BusMapComponent } from './components/bus-map/bus-map.component';
+import { NewsComponent } from './components/news/news.component';
+import { NumbersComponent } from './components/numbers/numbers.component';
+import { OrangeAppsComponent } from './components/orange-apps/orange-apps.component';
+import { QuoteComponent } from './components/quote/quote.component';
+import { AppsListComponent } from './components/apps-list/apps-list.component';
+import { RedirectALComponent } from './components/redirect-al/redirect-al.component';
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -58,7 +67,15 @@ const routes: Routes = [
   {path: 'Mission_interne', component: MissionsInterneComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
   {path: 'conge-travail', component: CongesComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
   {path: 'Formation_disponible', component: FormationsComponent, canActivate: [AuthGuard]}, // Add this route for the RestaurantScheduleComponent
-
+  { path: 'bus', component: BusHomeComponent, canActivate: [AuthGuard] },
+  { path: 'bus/map', component: BusMapComponent, canActivate: [AuthGuard] },
+  {path : 'news', component: NewsComponent, canActivate: [AuthGuard]}, // Add this route for the NewsComponent
+  {path : 'numbers', component: NumbersComponent, canActivate: [AuthGuard]}, // Add this route for the NumbersComponent
+  {path : 'orange-apps', component: OrangeAppsComponent, canActivate: [AuthGuard]}, // Add this route for the OrangeAppsComponent
+  {path : 'quote', component: QuoteComponent, canActivate: [AuthGuard]}, // Add this route for the QuoteComponent
+  {path : 'apps-list', component: AppsListComponent, canActivate: [AuthGuard]}, // Add this route for the AppsListComponent
+  {path : 'redirect-al', component: RedirectALComponent, canActivate: [AuthGuard]}, // Add this route for the RedirectALComponent
+  
   { path: '**', redirectTo: '' },
 ];
 

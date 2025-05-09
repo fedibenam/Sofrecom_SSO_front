@@ -1,0 +1,13 @@
+<div class="map-section shadow rounded p-3 mb-4">
+    <h4>{{ route.circuit }}</h4>
+  
+    <div [id]="mapId" class="map-container"></div>
+  
+    <div class="description-row">
+      <p class="description">
+        {{ route.description }}
+      </p>
+      <img *ngIf="route.qrCodeUrl" [src]="route.qrCodeUrl" alt="QR Code" class="qr-code" />
+    </div>
+  </div>
+  

@@ -1,0 +1,135 @@
+/* General Card Styling */
+.card {
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+  
+    .card-body {
+      padding: 20px;
+  
+      ul {
+        padding-left: 0;
+        list-style: none;
+  
+        li {
+          margin-bottom: 10px;
+          font-size: 0.95rem;
+  
+          strong {
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Section Titles */
+  .missions-section h2,
+  .employees-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff; /* Primary theme color */
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+  
+    &::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: #007bff;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .missions-section h2,
+    .employees-section h2 {
+      font-size: 1.6rem;
+    }
+  }
+  
+  /* Responsive Layout */
+  .row.g-4 {
+    gap: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .card-title {
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* Buttons */
+  button.btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+  
+  /* No Missions Message */
+  .text-muted {
+    font-size: 1rem;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Error Message */
+  .alert {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Cards */
+  @media only screen and (max-width: 991px) {
+    .card {
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Load More Button */
+  .load-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #28a745; /* Success theme color */
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #218838;
+    }
+  }

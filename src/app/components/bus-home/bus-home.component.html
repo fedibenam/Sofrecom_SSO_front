@@ -1,0 +1,30 @@
+<div class="search-notes-container row align-items-start">
+    <!-- Notes on the left -->
+    <div class="col-md-6 notes text-start">
+      <p><strong>🕐 Notes :</strong></p>
+      <p>🚌 L'heure n'est pas toujours précise !</p>
+      <p>🗣️ Parlez au conducteur si c'est votre première fois — certains arrêts peuvent être sautés.</p>
+    </div>
+  
+    <!-- Search bar on the right -->
+    <div class="col-md-6 d-flex justify-content-end">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        (input)="filterRoutes()"
+        placeholder="Rechercher votre circuit..."
+        class="form-control search-input"
+      />
+    </div>
+  </div>
+  
+  <div *ngFor="let route of filteredRoutes" class="route-map-wrapper">
+    <app-bus-map [route]="route"></app-bus-map>
+  </div>
+  
+  <div class="download-section text-center">
+    <a href="assets/pdf/all_stops.pdf" download class="btn btn-outline-primary mt-4">
+      📄 Télécharger tous les arrêts (PDF)
+    </a>
+  </div>
+  

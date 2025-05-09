@@ -1,34 +1,33 @@
-<app-header></app-header>
-<div class="container mt-5">
-    <h2 class="text-center text-primary mb-4">Conges</h2>
-  
-    <!-- Error Message -->
-    <div *ngIf="errorMessage" class="alert alert-danger">
-      {{ errorMessage }}
-    </div>
-  
-    <!-- Display Conges Data -->
-    <div *ngIf="conges.length > 0" class="mt-4">
-      <h3 class="text-success">Results:</h3>
-      <div class="row g-4">
-        <div *ngFor="let conge of conges" class="col-12 col-md-6 col-lg-4">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title text-primary mb-3">Collaborateur: {{ conge.collaborateur }}</h5>
-              <ul class="list-unstyled mb-0">
-                <li><strong>Date Debut:</strong> {{ conge.dateDebut | date: 'short' }}</li>
-                <li><strong>Date Fin:</strong> {{ conge.dateFin | date: 'short' }}</li>
-                <li><strong>Type:</strong> {{ conge.motif }}</li>
-              </ul>
-            </div>
-          </div>
+
+<div class="container py-5">
+  <h2 class="text-center mb-5">Congés</h2>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger text-center mb-4">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Congés Data Section -->
+  <section *ngIf="conges.length > 0" class="conges-grid">
+    <div *ngFor="let conge of conges" class="conge-card">
+      <div class="card-content">
+        <h5 class="conge-title">{{ conge.collaborateur }}</h5>
+        <div class="conge-details">
+          <span class="label">Date Debut:</span> {{ conge.dateDebut }}
+        </div>
+        <div class="conge-details">
+          <span class="label">Date Fin:</span> {{ conge.dateFin }}
+        </div>
+        <div class="conge-details">
+          <span class="label">Type:</span> {{ conge.motif }}
         </div>
       </div>
     </div>
-  
-    <!-- No Results -->
-    <div *ngIf="conges.length === 0 && !errorMessage" class="text-center mt-4">
-      <p class="text-muted">No conges found for the logged-in user.</p>
-    </div>
+  </section>
+
+  <!-- No Results -->
+  <div *ngIf="conges.length === 0 && !errorMessage" class="no-results">
+    <p>No congés found for the logged-in user.</p>
   </div>
-  <app-footer></app-footer>
+</div>
+

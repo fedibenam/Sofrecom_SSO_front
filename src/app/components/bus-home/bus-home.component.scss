@@ -1,0 +1,41 @@
+.search-notes-container {
+    margin: 3rem 20px 2rem 20px;
+    background-color: transparent; // ✅ make background transparent
+  
+    .notes {
+      font-size: 0.95rem;
+      color: #555;
+  
+      p {
+        margin: 0 0 0.4rem 0;
+      }
+    }
+  
+    .search-input {
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.4rem;
+      max-width: 100%;
+      width: 100%;
+      min-width: 250px;
+    }
+  }
+  
+  .route-map-wrapper {
+    margin: 0 50px 3rem 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    background-color: transparent;
+    padding: 1rem;
+  }
+  
+  .download-section {
+    margin-bottom: 4rem;
+  
+    .btn {
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+  

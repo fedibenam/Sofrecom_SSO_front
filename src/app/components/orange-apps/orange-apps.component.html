@@ -1,0 +1,23 @@
+<section class="orange-apps">
+    <h2 class="section-title">
+      Liens Essentiels Orange
+      <span class="title-underline"></span>
+    </h2>
+   
+    <div class="orange-apps-grid">
+      <ng-container *ngFor="let app of appData; let i = index">
+        <div
+          class="orange-app-card"
+          [ngClass]="{ 'hover-grow': hoveredCardIndex === i }"
+          (mouseenter)="startHoverDelay(i)"
+          (mouseleave)="cancelHoverDelay()"
+        >
+          <h3>{{ app.name }}</h3>
+   
+          <div class="hover-reveal">
+            <button class="btn-access" (click)="openRedirect(app.url)">Accéder</button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </section>

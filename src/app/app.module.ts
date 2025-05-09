@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common'; // Import CommonModule
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -40,6 +41,14 @@ import { DemandesComponent } from './components/demandes/demandes.component';
 import { MissionsInterneComponent } from './components/missions-interne/missions-interne.component';
 import { CongesComponent } from './components/conges/conges.component';
 import { FormationsComponent } from './components/formations/formations.component';
+import { BusHomeComponent } from './components/bus-home/bus-home.component';
+import { BusMapComponent } from './components/bus-map/bus-map.component';
+import { NewsComponent } from './components/news/news.component';
+import { NumbersComponent } from './components/numbers/numbers.component';
+import { OrangeAppsComponent } from './components/orange-apps/orange-apps.component';
+import { QuoteComponent } from './components/quote/quote.component';
+import { AppsListComponent } from './components/apps-list/apps-list.component';
+import { RedirectALComponent } from './components/redirect-al/redirect-al.component';
 
 @NgModule({
   declarations: [
@@ -79,8 +88,16 @@ import { FormationsComponent } from './components/formations/formations.componen
     MissionsInterneComponent,
     CongesComponent,
     FormationsComponent,
+    BusHomeComponent,
+    BusMapComponent,
+    NewsComponent,
+    NumbersComponent,
+    OrangeAppsComponent,
+    QuoteComponent,
+    AppsListComponent,
+    RedirectALComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule,CommonModule],
   providers: [AuthService],
   bootstrap: [AppComponent],
 })

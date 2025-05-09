@@ -1,0 +1,9 @@
+<div id="news-scroll-slider" #newsSlider>
+    <div class="news-item" *ngFor="let item of news; let i = index" [class.active]="i === activeIndex">
+      <img class="news-image" [src]="item.image" alt="news image">
+      <div class="news-content">
+        <h2 class="news-title">{{ item.title }}</h2>
+        <p class="news-description">{{ item.description }}</p>
+      </div>
+    </div>
+  </div>

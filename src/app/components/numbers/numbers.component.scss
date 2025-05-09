@@ -1,0 +1,56 @@
+$main-blue: #21527C;
+ 
+.stat-numbers {
+  background: transparent;
+  padding: 0 200px; // 100px left and right
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  height: 200px; // Slightly increased for visual balance
+ 
+  .section-title {
+    font-size: 28px;
+    font-family: 'Nunito Sans Light', sans-serif;
+    margin-bottom: 40px;
+  }
+ 
+  .stat-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: nowrap; // Always 3 in a line, no wrapping
+    position: relative;
+    top: -75px;
+    z-index: 3;
+    width: 100%;
+    box-sizing: border-box;
+  }
+ 
+  .stat-box {
+    background: #f1f1f1;
+    padding: 25px 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    flex: 1 1 0;
+    height: 150px;
+    box-sizing: border-box;
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+    h2 {
+      font-size: 36px;
+      color: $main-blue;
+      margin-bottom: 10px;
+      font-family: 'Nunito Sans SemiBold', sans-serif;
+    }
+ 
+    p {
+      font-size: 16px;
+      font-family: 'Nunito Sans', sans-serif;
+      margin: 0;
+    }
+  }
+}

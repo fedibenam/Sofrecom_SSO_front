@@ -1,0 +1,101 @@
+// Global Variables
+$primary-color: #4A90E2;
+$bg-color: #F5F7FA;
+$card-bg-color: #FFFFFF;
+$text-color: #333;
+$muted-color: #6C757D;
+$border-radius: 1rem;
+$shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+$transition: 0.3s ease;
+
+// Global Styles
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: $primary-color;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+// Error Message
+.alert {
+  background-color: #ffdddd;
+  color: #d9534f;
+  padding: 1rem;
+  border-radius: $border-radius;
+  margin-bottom: 2rem;
+  box-shadow: $shadow;
+  text-align: center;
+  font-weight: 500;
+}
+
+// Congés Grid
+.conges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+// Congé Card
+.conge-card {
+  background-color: $card-bg-color;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  transition: transform $transition, box-shadow $transition;
+  padding: 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $hover-shadow;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .conge-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+  }
+
+  .conge-details {
+    font-size: 0.95rem;
+    color: $text-color;
+    display: flex;
+    justify-content: space-between;
+
+    .label {
+      font-weight: 500;
+      color: $muted-color;
+    }
+  }
+}
+
+// No Results Message
+.no-results {
+  text-align: center;
+  padding: 3rem 0;
+  color: $muted-color;
+  font-size: 1.1rem;
+}

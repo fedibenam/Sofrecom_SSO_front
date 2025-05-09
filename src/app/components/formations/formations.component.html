@@ -1,21 +1,21 @@
-<app-header></app-header>
-<div class="container mt-5">
-  <h2 class="text-center text-primary mb-4">Training Sessions</h2>
+
+<div class="container py-5">
+  <h2 class="text-center text-primary mb-5">Training Sessions</h2>
 
   <!-- Error Message -->
-  <div *ngIf="errorMessage" class="alert alert-danger">
+  <div *ngIf="errorMessage" class="alert alert-danger text-center mb-4">
     {{ errorMessage }}
   </div>
 
-  <!-- Planned Sessions -->
-  <div *ngIf="plannedSessions.length > 0" class="mt-4">
-    <h3 class="text-success">Planned Sessions for Next Month</h3>
+  <!-- Planned Sessions Section -->
+  <section *ngIf="plannedSessions.length > 0" class="mb-5">
+    <h3 class="text-success mb-4">Planned Sessions for Next Month</h3>
     <div class="row g-4">
-      <div *ngFor="let session of plannedSessions" class="col-12 col-md-6 col-lg-4">
-        <div class="card shadow-sm h-100">
+      <div *ngFor="let session of plannedSessions" class="col-md-6 col-lg-4">
+        <div class="card shadow-sm h-100 border-0 rounded">
           <div class="card-body">
             <h5 class="card-title text-primary mb-3">{{ session.libelle_session }}</h5>
-            <ul class="list-unstyled mb-0">
+            <ul class="list-unstyled">
               <li><strong>Matricule:</strong> {{ session.matricule }}</li>
               <li><strong>Date:</strong> {{ session.date_session | date: 'short' }}</li>
               <li><strong>Employee:</strong> {{ session.nom_prenom }}</li>
@@ -33,17 +33,17 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Completed Sessions -->
-  <div *ngIf="completedSessions.length > 0" class="mt-5">
-    <h3 class="text-info">Completed Sessions</h3>
+  <!-- Completed Sessions Section -->
+  <section *ngIf="completedSessions.length > 0" class="mb-5">
+    <h3 class="text-info mb-4">Completed Sessions</h3>
     <div class="row g-4">
-      <div *ngFor="let session of completedSessions" class="col-12 col-md-6 col-lg-4">
-        <div class="card shadow-sm h-100">
+      <div *ngFor="let session of completedSessions" class="col-md-6 col-lg-4">
+        <div class="card shadow-sm h-100 border-0 rounded">
           <div class="card-body">
             <h5 class="card-title text-primary mb-3">{{ session.libelle_session }}</h5>
-            <ul class="list-unstyled mb-0">
+            <ul class="list-unstyled">
               <li><strong>Matricule:</strong> {{ session.matricule }}</li>
               <li><strong>Date:</strong> {{ session.date_session | date: 'short' }}</li>
               <li><strong>Employee:</strong> {{ session.nom_prenom }}</li>
@@ -61,11 +61,11 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- No Results -->
-  <div *ngIf="plannedSessions.length === 0 && completedSessions.length === 0 && !errorMessage" class="text-center mt-4">
+  <div *ngIf="plannedSessions.length === 0 && completedSessions.length === 0 && !errorMessage" class="text-center py-5">
     <p class="text-muted">No training sessions found.</p>
   </div>
 </div>
-<app-footer></app-footer>
+
